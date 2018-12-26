@@ -15,6 +15,7 @@
 		0819316D21D32C9F00710E6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0819316B21D32C9F00710E6C /* LaunchScreen.storyboard */; };
 		0819317821D32C9F00710E6C /* TransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819317721D32C9F00710E6C /* TransformerTests.swift */; };
 		0819318321D32C9F00710E6C /* TransformerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819318221D32C9F00710E6C /* TransformerUITests.swift */; };
+		0819319121D330EE00710E6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819319021D330ED00710E6C /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0819317E21D32C9F00710E6C /* TransformerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0819318221D32C9F00710E6C /* TransformerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerUITests.swift; sourceTree = "<group>"; };
 		0819318421D32C9F00710E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0819319021D330ED00710E6C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0819315F21D32C9A00710E6C /* AppDelegate.swift */,
+				0819319021D330ED00710E6C /* CoreDataStack.swift */,
 				0819316121D32C9A00710E6C /* ViewController.swift */,
 				0819316321D32C9A00710E6C /* Main.storyboard */,
 				0819316921D32C9F00710E6C /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 				0819316221D32C9A00710E6C /* ViewController.swift in Sources */,
 				0819316021D32C9A00710E6C /* AppDelegate.swift in Sources */,
 				0819316821D32C9A00710E6C /* Transformer.xcdatamodeld in Sources */,
+				0819319121D330EE00710E6C /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,11 +443,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z5L7CT92A6;
 				INFOPLIST_FILE = Transformer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Leah-Xia.Transformer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leahxia.Transformer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -457,11 +462,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z5L7CT92A6;
 				INFOPLIST_FILE = Transformer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Leah-Xia.Transformer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leahxia.Transformer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
