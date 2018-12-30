@@ -1,24 +1,617 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hyx-kk-cLt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Transformers Movie.ttf">
+            <string>TransformersMovie</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Transformer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TransformerListViewController" customModule="Transformer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wh1-WG-Ft1">
+                                <rect key="frame" x="20" y="76" width="335" height="505"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zb3-vg-yBD">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="247.5"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8U6-ee-Cqq">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="247.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="yiV-D4-6f1">
+                                                    <size key="itemSize" width="324" height="220"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="transformerListCellId" id="p45-uV-2uI" customClass="TransformerListCollectionViewCell" customModule="Transformer" customModuleProvider="target">
+                                                        <rect key="frame" x="5.5" y="0.0" width="324" height="220"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="324" height="220"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="autobots" translatesAutoresizingMaskIntoConstraints="NO" id="BGS-Io-P1D">
+                                                                    <rect key="frame" x="24" y="38" width="98" height="96"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="98" id="aZZ-Kn-yRc"/>
+                                                                        <constraint firstAttribute="height" constant="96" id="bTG-qs-Cr6"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BubbleBee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMM-ED-gaV">
+                                                                    <rect key="frame" x="144" y="40" width="150" height="15"/>
+                                                                    <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="20"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlg-2h-iie" userLabel="Spec Container View">
+                                                                    <rect key="frame" x="144" y="69" width="160" height="120"/>
+                                                                    <subviews>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p8k-UM-R1R">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
+                                                                            <subviews>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ooQ-hv-qbW" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Strength" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvC-h7-F4K">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="127.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0O-Fa-mA2">
+                                                                                            <rect key="frame" x="129.5" y="0.0" width="30.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="NIj-it-qVp" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="15" width="160" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intelligence" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smH-ls-O89">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="135" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lg-FE-ziz">
+                                                                                            <rect key="frame" x="137" y="0.0" width="23" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="YXT-3G-Gwg" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="30" width="160" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0Y-fE-6B0">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="114.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-Kd-h7j">
+                                                                                            <rect key="frame" x="116.5" y="0.0" width="43.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="60S-Kn-a4a" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="45" width="160" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endurance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPO-cM-LJC">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="132" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUl-4k-mpJ">
+                                                                                            <rect key="frame" x="134" y="0.0" width="26" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="LOv-44-fyp" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="60" width="160" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb6-d1-Z3a">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-0C-XU7">
+                                                                                            <rect key="frame" x="112" y="0.0" width="48" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="DD3-19-8Ot" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="75" width="160" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Courage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1W-IV-SGm">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="126" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-so-xIs">
+                                                                                            <rect key="frame" x="128" y="0.0" width="32" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mzw-gN-OHJ" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="90" width="160" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firepower" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTP-Ky-9Ck">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="131" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2P-bc-43o">
+                                                                                            <rect key="frame" x="133" y="0.0" width="27" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gZ8-0a-v8Y" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="105" width="160" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A44-G8-NLF">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8v-K9-PBm">
+                                                                                            <rect key="frame" x="112.5" y="0.0" width="47.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="120" id="5ZZ-J0-xZc"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="p8k-UM-R1R" secondAttribute="bottom" id="MD5-nm-FCk"/>
+                                                                        <constraint firstItem="p8k-UM-R1R" firstAttribute="leading" secondItem="zlg-2h-iie" secondAttribute="leading" id="Uuj-8M-uW5"/>
+                                                                        <constraint firstItem="p8k-UM-R1R" firstAttribute="top" secondItem="zlg-2h-iie" secondAttribute="top" id="XK6-iX-E26"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="p8k-UM-R1R" secondAttribute="trailing" id="z9K-4k-g24"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUTOBOTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dB-xI-wVM">
+                                                                    <rect key="frame" x="24" y="145" width="98" height="12"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="12" id="fIb-qk-UXe"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="15.600000381469727"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGl-PP-pVg">
+                                                                    <rect key="frame" x="296" y="32" width="20" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="ZqR-SM-7uI"/>
+                                                                        <constraint firstAttribute="width" constant="20" id="brp-kg-rnp"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <state key="normal" image="trash-can"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </view>
+                                                        <color key="backgroundColor" red="0.0" green="0.031372549019607843" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="UMM-ED-gaV" firstAttribute="leading" secondItem="BGS-Io-P1D" secondAttribute="trailing" constant="22" id="1Iq-nw-Old"/>
+                                                            <constraint firstItem="6dB-xI-wVM" firstAttribute="top" secondItem="BGS-Io-P1D" secondAttribute="bottom" constant="11" id="4DD-IF-kGf"/>
+                                                            <constraint firstItem="zlg-2h-iie" firstAttribute="top" secondItem="UMM-ED-gaV" secondAttribute="bottom" multiplier="1.25" id="4f1-ck-Hwv"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="zlg-2h-iie" secondAttribute="trailing" constant="12" id="5uv-78-MGc"/>
+                                                            <constraint firstItem="iGl-PP-pVg" firstAttribute="leading" secondItem="UMM-ED-gaV" secondAttribute="trailing" constant="2" id="F2M-Cv-voR"/>
+                                                            <constraint firstItem="UMM-ED-gaV" firstAttribute="top" secondItem="BGS-Io-P1D" secondAttribute="top" constant="2" id="crr-T0-zQ8"/>
+                                                            <constraint firstItem="zlg-2h-iie" firstAttribute="leading" secondItem="UMM-ED-gaV" secondAttribute="leading" id="jFm-br-PdR"/>
+                                                            <constraint firstItem="BGS-Io-P1D" firstAttribute="leading" secondItem="p45-uV-2uI" secondAttribute="leadingMargin" constant="16" id="jHE-XC-CM1"/>
+                                                            <constraint firstItem="BGS-Io-P1D" firstAttribute="top" secondItem="p45-uV-2uI" secondAttribute="topMargin" constant="10" id="l7i-PH-whw"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="iGl-PP-pVg" secondAttribute="trailing" id="m75-8S-phZ"/>
+                                                            <constraint firstItem="iGl-PP-pVg" firstAttribute="top" secondItem="p45-uV-2uI" secondAttribute="topMargin" constant="4" id="p8Z-c5-cr0"/>
+                                                            <constraint firstItem="6dB-xI-wVM" firstAttribute="leading" secondItem="BGS-Io-P1D" secondAttribute="leading" id="xjs-Q6-GhJ"/>
+                                                            <constraint firstItem="6dB-xI-wVM" firstAttribute="trailing" secondItem="BGS-Io-P1D" secondAttribute="trailing" id="xvR-QF-euC"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="courageValueLabel" destination="dvY-so-xIs" id="lvw-Sg-Hsy"/>
+                                                            <outlet property="deleteButton" destination="iGl-PP-pVg" id="BJp-1L-IZS"/>
+                                                            <outlet property="enduranceValueLabel" destination="XUl-4k-mpJ" id="f2W-Ee-NQV"/>
+                                                            <outlet property="firepowerValueLabel" destination="j2P-bc-43o" id="z3d-vg-eXB"/>
+                                                            <outlet property="intelligenceValueLabel" destination="0Lg-FE-ziz" id="ncT-RH-Ert"/>
+                                                            <outlet property="rankValueLabel" destination="DKb-0C-XU7" id="LXJ-Va-5TN"/>
+                                                            <outlet property="skillValueLabel" destination="u8v-K9-PBm" id="kxe-Fy-gAc"/>
+                                                            <outlet property="speedValueLabel" destination="pDP-Kd-h7j" id="8AJ-bz-3vD"/>
+                                                            <outlet property="strengthValueLabel" destination="C0O-Fa-mA2" id="Lc3-09-Lba"/>
+                                                            <outlet property="teamImageView" destination="BGS-Io-P1D" id="WH8-vT-ita"/>
+                                                            <outlet property="transformerNameLabel" destination="UMM-ED-gaV" id="dDW-EZ-BGy"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="BJm-2r-7gz"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="V67-GD-BW0"/>
+                                                </connections>
+                                            </collectionView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="foI-Zy-KSr">
+                                                <rect key="frame" x="148" y="208.5" width="39" height="37"/>
+                                            </pageControl>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="8U6-ee-Cqq" secondAttribute="bottom" id="8Q0-cr-Z4o"/>
+                                            <constraint firstAttribute="bottom" secondItem="foI-Zy-KSr" secondAttribute="bottom" constant="2" id="c1a-cy-ID1"/>
+                                            <constraint firstItem="8U6-ee-Cqq" firstAttribute="leading" secondItem="zb3-vg-yBD" secondAttribute="leading" id="eAe-KY-mF9"/>
+                                            <constraint firstAttribute="trailing" secondItem="8U6-ee-Cqq" secondAttribute="trailing" id="jd3-po-DqS"/>
+                                            <constraint firstItem="foI-Zy-KSr" firstAttribute="centerX" secondItem="zb3-vg-yBD" secondAttribute="centerX" id="pdQ-l1-Z85"/>
+                                            <constraint firstItem="8U6-ee-Cqq" firstAttribute="top" secondItem="zb3-vg-yBD" secondAttribute="top" id="xyC-00-MpW"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMd-5a-5rj">
+                                        <rect key="frame" x="0.0" y="257.5" width="335" height="247.5"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z6x-yQ-EII">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="247.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="BF4-YD-Sqo">
+                                                    <size key="itemSize" width="331" height="221"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="transformerListCellId" id="Q8x-LQ-VAU" customClass="TransformerListCollectionViewCell" customModule="Transformer" customModuleProvider="target">
+                                                        <rect key="frame" x="2" y="0.0" width="331" height="221"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="331" height="221"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="decepticons" translatesAutoresizingMaskIntoConstraints="NO" id="wTB-KI-K4p">
+                                                                    <rect key="frame" x="24" y="38" width="98" height="96"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="98" id="6hT-Ai-hnt"/>
+                                                                        <constraint firstAttribute="height" constant="96" id="cvA-ki-pKG"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BubbleBee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uo-I8-iGs">
+                                                                    <rect key="frame" x="144" y="40" width="157" height="15"/>
+                                                                    <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="20"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0X-3u-3cV" userLabel="Spec Container View">
+                                                                    <rect key="frame" x="144" y="65" width="167" height="120"/>
+                                                                    <subviews>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NqX-ZU-STr">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="167" height="120"/>
+                                                                            <subviews>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ig5-9a-oNJ" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Strength" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEg-q4-w8y">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="133" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6G-7e-2eH">
+                                                                                            <rect key="frame" x="135" y="0.0" width="32" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="NTm-D2-2WR" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="15" width="167" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intelligence" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-fF-0q3">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="140.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exc-HH-Evo">
+                                                                                            <rect key="frame" x="142.5" y="0.0" width="24.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dda-Y5-Edx" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="30" width="167" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1x-9M-gAW">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="119.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH2-qx-wke">
+                                                                                            <rect key="frame" x="121.5" y="0.0" width="45.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eKg-Dr-fPi" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="45" width="167" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJS-u3-f5f">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0I6-Vm-RbU">
+                                                                                            <rect key="frame" x="117" y="0.0" width="50" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="R6M-Xx-6aP" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="60" width="167" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endurance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj2-3o-UVS">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="137.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nc4-sZ-jzu">
+                                                                                            <rect key="frame" x="139.5" y="0.0" width="27.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1e7-4x-P0x" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="75" width="167" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Courage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8v7-pc-196">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="131.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ce-58-GNM">
+                                                                                            <rect key="frame" x="133.5" y="0.0" width="33.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6ge-Kb-aks" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="90" width="167" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firepower" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjB-TC-NYs">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="137" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ES-ls-SRQ">
+                                                                                            <rect key="frame" x="139" y="0.0" width="28" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="2IK-Q0-zqA" userLabel="St Stack View">
+                                                                                    <rect key="frame" x="0.0" y="105" width="167" height="15"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olZ-jn-a8i">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="115.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-QS-Ynq">
+                                                                                            <rect key="frame" x="117.5" y="0.0" width="49.5" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="NqX-ZU-STr" secondAttribute="bottom" id="2Hk-rr-vGn"/>
+                                                                        <constraint firstItem="NqX-ZU-STr" firstAttribute="top" secondItem="g0X-3u-3cV" secondAttribute="top" id="7bJ-Jd-3Bk"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="NqX-ZU-STr" secondAttribute="trailing" id="HlM-AY-lV9"/>
+                                                                        <constraint firstItem="NqX-ZU-STr" firstAttribute="leading" secondItem="g0X-3u-3cV" secondAttribute="leading" id="XIA-kQ-BwR"/>
+                                                                        <constraint firstAttribute="height" constant="120" id="m2U-jz-Yjp"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decepticons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4g-aS-SGY">
+                                                                    <rect key="frame" x="24" y="145" width="98" height="12"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="12" id="Dbw-fs-MfS"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="15.600000381469727"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvp-fE-R54">
+                                                                    <rect key="frame" x="303" y="32" width="20" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="20" id="WE0-ds-uNY"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="bAt-EH-y2k"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" image="trash-can"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </view>
+                                                        <color key="backgroundColor" red="0.24313725490196078" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="d4g-aS-SGY" firstAttribute="top" secondItem="wTB-KI-K4p" secondAttribute="bottom" constant="11" id="3To-Eu-pBK"/>
+                                                            <constraint firstItem="9uo-I8-iGs" firstAttribute="top" secondItem="wTB-KI-K4p" secondAttribute="top" constant="2" id="A0s-jk-tkE"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="g0X-3u-3cV" secondAttribute="trailing" constant="12" id="EGm-qy-Eek"/>
+                                                            <constraint firstItem="xvp-fE-R54" firstAttribute="leading" secondItem="9uo-I8-iGs" secondAttribute="trailing" constant="2" id="PlY-dj-7ca"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="xvp-fE-R54" secondAttribute="trailing" id="QUK-MW-dcS"/>
+                                                            <constraint firstItem="g0X-3u-3cV" firstAttribute="top" secondItem="9uo-I8-iGs" secondAttribute="bottom" constant="10" id="QhC-yg-CPq"/>
+                                                            <constraint firstItem="d4g-aS-SGY" firstAttribute="trailing" secondItem="wTB-KI-K4p" secondAttribute="trailing" id="ZsL-Vz-keq"/>
+                                                            <constraint firstItem="xvp-fE-R54" firstAttribute="top" secondItem="Q8x-LQ-VAU" secondAttribute="topMargin" constant="4" id="djb-Nd-UCc"/>
+                                                            <constraint firstItem="9uo-I8-iGs" firstAttribute="leading" secondItem="wTB-KI-K4p" secondAttribute="trailing" constant="22" id="hZI-Zb-zvq"/>
+                                                            <constraint firstItem="wTB-KI-K4p" firstAttribute="leading" secondItem="Q8x-LQ-VAU" secondAttribute="leadingMargin" constant="16" id="isv-Oq-ND4"/>
+                                                            <constraint firstItem="wTB-KI-K4p" firstAttribute="top" secondItem="Q8x-LQ-VAU" secondAttribute="topMargin" constant="10" id="oaq-ex-9Ox"/>
+                                                            <constraint firstItem="g0X-3u-3cV" firstAttribute="leading" secondItem="9uo-I8-iGs" secondAttribute="leading" id="q0F-jq-fcE"/>
+                                                            <constraint firstItem="d4g-aS-SGY" firstAttribute="leading" secondItem="wTB-KI-K4p" secondAttribute="leading" id="zfV-Ul-GQm"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="courageValueLabel" destination="3ce-58-GNM" id="f9E-na-1KL"/>
+                                                            <outlet property="deleteButton" destination="xvp-fE-R54" id="1QC-8D-v5D"/>
+                                                            <outlet property="enduranceValueLabel" destination="nc4-sZ-jzu" id="DzK-uH-Os2"/>
+                                                            <outlet property="firepowerValueLabel" destination="8ES-ls-SRQ" id="s3q-rQ-y3U"/>
+                                                            <outlet property="intelligenceValueLabel" destination="exc-HH-Evo" id="lL2-pN-kKN"/>
+                                                            <outlet property="rankValueLabel" destination="0I6-Vm-RbU" id="Ovj-wo-7AO"/>
+                                                            <outlet property="skillValueLabel" destination="Fgb-QS-Ynq" id="XyA-EC-wym"/>
+                                                            <outlet property="speedValueLabel" destination="dH2-qx-wke" id="Btd-am-vIh"/>
+                                                            <outlet property="strengthValueLabel" destination="d6G-7e-2eH" id="McI-g2-4q0"/>
+                                                            <outlet property="teamImageView" destination="wTB-KI-K4p" id="hf4-Nd-kTo"/>
+                                                            <outlet property="transformerNameLabel" destination="9uo-I8-iGs" id="Vbh-pk-DvM"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="QId-Dz-tpG"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ujY-KC-kQ3"/>
+                                                </connections>
+                                            </collectionView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="EqY-0p-6ST">
+                                                <rect key="frame" x="148" y="208.5" width="39" height="37"/>
+                                            </pageControl>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Z6x-yQ-EII" firstAttribute="top" secondItem="nMd-5a-5rj" secondAttribute="top" id="27f-Iw-RPX"/>
+                                            <constraint firstAttribute="bottom" secondItem="Z6x-yQ-EII" secondAttribute="bottom" id="N0w-Qk-uFb"/>
+                                            <constraint firstAttribute="bottom" secondItem="EqY-0p-6ST" secondAttribute="bottom" constant="2" id="e6X-11-DdD"/>
+                                            <constraint firstItem="Z6x-yQ-EII" firstAttribute="leading" secondItem="nMd-5a-5rj" secondAttribute="leading" id="jIU-ou-puZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Z6x-yQ-EII" secondAttribute="trailing" id="kIQ-ni-ekz"/>
+                                            <constraint firstItem="EqY-0p-6ST" firstAttribute="centerX" secondItem="nMd-5a-5rj" secondAttribute="centerX" id="uUm-Rm-viU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zw2-y1-wLc">
+                                <rect key="frame" x="20" y="591" width="335" height="66"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="Wzj-xq-qcP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="66"/>
+                                <state key="normal" title="FIGHT!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didFightButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="834-6b-1AW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zw2-y1-wLc" firstAttribute="trailing" secondItem="wh1-WG-Ft1" secondAttribute="trailing" id="3c0-Y4-pTN"/>
+                            <constraint firstItem="wh1-WG-Ft1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="C8U-bX-ngx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zw2-y1-wLc" secondAttribute="bottom" constant="10" id="Dyb-TX-82e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wh1-WG-Ft1" secondAttribute="trailing" constant="20" id="GlF-Ks-IYL"/>
+                            <constraint firstItem="wh1-WG-Ft1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JKB-A5-emz"/>
+                            <constraint firstItem="zw2-y1-wLc" firstAttribute="leading" secondItem="wh1-WG-Ft1" secondAttribute="leading" id="Mf7-M6-dF0"/>
+                            <constraint firstItem="zw2-y1-wLc" firstAttribute="top" secondItem="wh1-WG-Ft1" secondAttribute="bottom" constant="10" id="Qbd-sx-k2I"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Transformer" id="TvI-Lu-bxC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tp5-bZ-aWR"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="autobotsCollectionView" destination="8U6-ee-Cqq" id="8dk-g7-YS5"/>
+                        <outlet property="autobotsPageControll" destination="foI-Zy-KSr" id="zAv-Qu-3Hy"/>
+                        <outlet property="decepticonsCollectionView" destination="Z6x-yQ-EII" id="q7n-bb-kv3"/>
+                        <outlet property="decepticonsPageControll" destination="EqY-0p-6ST" id="HY1-Oy-eaw"/>
+                        <outlet property="fightButton" destination="zw2-y1-wLc" id="j5k-Zf-xhx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sZ2-2x-RMv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hyx-kk-cLt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mDz-cq-Xxp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="laS-87-Mn4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERi-kd-aiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="autobots" width="98" height="97"/>
+        <image name="decepticons" width="98" height="97"/>
+        <image name="trash-can" width="35" height="34"/>
+    </resources>
 </document>

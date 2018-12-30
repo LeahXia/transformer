@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0819316021D32C9A00710E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819315F21D32C9A00710E6C /* AppDelegate.swift */; };
-		0819316221D32C9A00710E6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819316121D32C9A00710E6C /* ViewController.swift */; };
+		0819316221D32C9A00710E6C /* TransformerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819316121D32C9A00710E6C /* TransformerListViewController.swift */; };
 		0819316521D32C9A00710E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0819316321D32C9A00710E6C /* Main.storyboard */; };
 		0819316821D32C9A00710E6C /* Transformer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0819316621D32C9A00710E6C /* Transformer.xcdatamodeld */; };
 		0819316A21D32C9F00710E6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0819316921D32C9F00710E6C /* Assets.xcassets */; };
@@ -16,6 +16,9 @@
 		0819317821D32C9F00710E6C /* TransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819317721D32C9F00710E6C /* TransformerTests.swift */; };
 		0819318321D32C9F00710E6C /* TransformerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819318221D32C9F00710E6C /* TransformerUITests.swift */; };
 		0819319121D330EE00710E6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819319021D330ED00710E6C /* CoreDataStack.swift */; };
+		0819319721D37B6900710E6C /* TransformerListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819319621D37B6900710E6C /* TransformerListCollectionViewCell.swift */; };
+		0819319B21D4AC1300710E6C /* Transformers Movie.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0819319921D4AB9700710E6C /* Transformers Movie.ttf */; };
+		08D0509821D8810600DACE09 /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D0509721D8810600DACE09 /* enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,7 @@
 /* Begin PBXFileReference section */
 		0819315C21D32C9A00710E6C /* Transformer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transformer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0819315F21D32C9A00710E6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0819316121D32C9A00710E6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0819316121D32C9A00710E6C /* TransformerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListViewController.swift; sourceTree = "<group>"; };
 		0819316421D32C9A00710E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0819316721D32C9A00710E6C /* Transformer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Transformer.xcdatamodel; sourceTree = "<group>"; };
 		0819316921D32C9F00710E6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,9 @@
 		0819318221D32C9F00710E6C /* TransformerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerUITests.swift; sourceTree = "<group>"; };
 		0819318421D32C9F00710E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0819319021D330ED00710E6C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		0819319621D37B6900710E6C /* TransformerListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListCollectionViewCell.swift; sourceTree = "<group>"; };
+		0819319921D4AB9700710E6C /* Transformers Movie.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Transformers Movie.ttf"; sourceTree = "<group>"; };
+		08D0509721D8810600DACE09 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +109,14 @@
 			children = (
 				0819315F21D32C9A00710E6C /* AppDelegate.swift */,
 				0819319021D330ED00710E6C /* CoreDataStack.swift */,
-				0819316121D32C9A00710E6C /* ViewController.swift */,
 				0819316321D32C9A00710E6C /* Main.storyboard */,
 				0819316921D32C9F00710E6C /* Assets.xcassets */,
 				0819316B21D32C9F00710E6C /* LaunchScreen.storyboard */,
 				0819316E21D32C9F00710E6C /* Info.plist */,
 				0819316621D32C9A00710E6C /* Transformer.xcdatamodeld */,
+				0819319221D33D9400710E6C /* TransformerList */,
+				08D0509621D880EF00DACE09 /* Helper */,
+				0819319821D4AB5000710E6C /* Fonts */,
 			);
 			path = Transformer;
 			sourceTree = "<group>";
@@ -129,6 +137,39 @@
 				0819318421D32C9F00710E6C /* Info.plist */,
 			);
 			path = TransformerUITests;
+			sourceTree = "<group>";
+		};
+		0819319221D33D9400710E6C /* TransformerList */ = {
+			isa = PBXGroup;
+			children = (
+				0819316121D32C9A00710E6C /* TransformerListViewController.swift */,
+				0819319321D33E2D00710E6C /* Views */,
+			);
+			path = TransformerList;
+			sourceTree = "<group>";
+		};
+		0819319321D33E2D00710E6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0819319621D37B6900710E6C /* TransformerListCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0819319821D4AB5000710E6C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0819319921D4AB9700710E6C /* Transformers Movie.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		08D0509621D880EF00DACE09 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				08D0509721D8810600DACE09 /* enum.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0819319B21D4AC1300710E6C /* Transformers Movie.ttf in Resources */,
 				0819316D21D32C9F00710E6C /* LaunchScreen.storyboard in Resources */,
 				0819316A21D32C9F00710E6C /* Assets.xcassets in Resources */,
 				0819316521D32C9A00710E6C /* Main.storyboard in Resources */,
@@ -262,10 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0819316221D32C9A00710E6C /* ViewController.swift in Sources */,
+				0819316221D32C9A00710E6C /* TransformerListViewController.swift in Sources */,
 				0819316021D32C9A00710E6C /* AppDelegate.swift in Sources */,
+				08D0509821D8810600DACE09 /* enum.swift in Sources */,
 				0819316821D32C9A00710E6C /* Transformer.xcdatamodeld in Sources */,
 				0819319121D330EE00710E6C /* CoreDataStack.swift in Sources */,
+				0819319721D37B6900710E6C /* TransformerListCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
