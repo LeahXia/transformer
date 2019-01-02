@@ -12,3 +12,9 @@ enum CornerRadius: CGFloat {
     case button = 15.2
     case cell = 14
 }
+
+enum EndPoint: String {
+    case token = "allspark"
+    case transformers = "transformers"
+    case deleteTransformer = "transformers/"
+}

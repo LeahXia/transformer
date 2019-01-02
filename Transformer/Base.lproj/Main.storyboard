@@ -18,7 +18,7 @@
         <!--Transformer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TransformerListViewController" customModule="Transformer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransformerListViewControllerId" id="BYZ-38-t0r" customClass="TransformerListViewController" customModule="Transformer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
                                                                         <constraint firstAttribute="height" constant="96" id="bTG-qs-Cr6"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BubbleBee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMM-ED-gaV">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMM-ED-gaV">
                                                                     <rect key="frame" x="144" y="40" width="150" height="15"/>
                                                                     <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,13 +70,13 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Strength" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvC-h7-F4K">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="127.5" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="136.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0O-Fa-mA2">
-                                                                                            <rect key="frame" x="129.5" y="0.0" width="30.5" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0O-Fa-mA2">
+                                                                                            <rect key="frame" x="138.5" y="0.0" width="21.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -87,13 +87,13 @@
                                                                                     <rect key="frame" x="0.0" y="15" width="160" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intelligence" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smH-ls-O89">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="135" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="142" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lg-FE-ziz">
-                                                                                            <rect key="frame" x="137" y="0.0" width="23" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lg-FE-ziz">
+                                                                                            <rect key="frame" x="144" y="0.0" width="16" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -104,13 +104,13 @@
                                                                                     <rect key="frame" x="0.0" y="30" width="160" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0Y-fE-6B0">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="114.5" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="126" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-Kd-h7j">
-                                                                                            <rect key="frame" x="116.5" y="0.0" width="43.5" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-Kd-h7j">
+                                                                                            <rect key="frame" x="128" y="0.0" width="32" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -121,13 +121,13 @@
                                                                                     <rect key="frame" x="0.0" y="45" width="160" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endurance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPO-cM-LJC">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="132" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="139.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUl-4k-mpJ">
-                                                                                            <rect key="frame" x="134" y="0.0" width="26" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUl-4k-mpJ">
+                                                                                            <rect key="frame" x="141.5" y="0.0" width="18.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -138,13 +138,13 @@
                                                                                     <rect key="frame" x="0.0" y="60" width="160" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb6-d1-Z3a">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="122" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-0C-XU7">
-                                                                                            <rect key="frame" x="112" y="0.0" width="48" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-0C-XU7">
+                                                                                            <rect key="frame" x="124" y="0.0" width="36" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -155,13 +155,13 @@
                                                                                     <rect key="frame" x="0.0" y="75" width="160" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Courage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1W-IV-SGm">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="126" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="135" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-so-xIs">
-                                                                                            <rect key="frame" x="128" y="0.0" width="32" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-so-xIs">
+                                                                                            <rect key="frame" x="137" y="0.0" width="23" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -172,13 +172,13 @@
                                                                                     <rect key="frame" x="0.0" y="90" width="160" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firepower" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTP-Ky-9Ck">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="131" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="139" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2P-bc-43o">
-                                                                                            <rect key="frame" x="133" y="0.0" width="27" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2P-bc-43o">
+                                                                                            <rect key="frame" x="141" y="0.0" width="19" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -189,13 +189,13 @@
                                                                                     <rect key="frame" x="0.0" y="105" width="160" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A44-G8-NLF">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="122.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8v-K9-PBm">
-                                                                                            <rect key="frame" x="112.5" y="0.0" width="47.5" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8v-K9-PBm">
+                                                                                            <rect key="frame" x="124.5" y="0.0" width="35.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -313,7 +313,7 @@
                                                                         <constraint firstAttribute="height" constant="96" id="cvA-ki-pKG"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BubbleBee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uo-I8-iGs">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uo-I8-iGs">
                                                                     <rect key="frame" x="144" y="40" width="157" height="15"/>
                                                                     <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -329,13 +329,13 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="167" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Strength" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEg-q4-w8y">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="133" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="142.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6G-7e-2eH">
-                                                                                            <rect key="frame" x="135" y="0.0" width="32" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6G-7e-2eH">
+                                                                                            <rect key="frame" x="144.5" y="0.0" width="22.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -346,13 +346,13 @@
                                                                                     <rect key="frame" x="0.0" y="15" width="167" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intelligence" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-fF-0q3">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="140.5" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="148" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exc-HH-Evo">
-                                                                                            <rect key="frame" x="142.5" y="0.0" width="24.5" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exc-HH-Evo">
+                                                                                            <rect key="frame" x="150" y="0.0" width="17" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -363,13 +363,13 @@
                                                                                     <rect key="frame" x="0.0" y="30" width="167" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1x-9M-gAW">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="119.5" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="131.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH2-qx-wke">
-                                                                                            <rect key="frame" x="121.5" y="0.0" width="45.5" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH2-qx-wke">
+                                                                                            <rect key="frame" x="133.5" y="0.0" width="33.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -380,13 +380,13 @@
                                                                                     <rect key="frame" x="0.0" y="45" width="167" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJS-u3-f5f">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="127.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0I6-Vm-RbU">
-                                                                                            <rect key="frame" x="117" y="0.0" width="50" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0I6-Vm-RbU">
+                                                                                            <rect key="frame" x="129.5" y="0.0" width="37.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -397,13 +397,13 @@
                                                                                     <rect key="frame" x="0.0" y="60" width="167" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endurance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj2-3o-UVS">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="137.5" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="146" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nc4-sZ-jzu">
-                                                                                            <rect key="frame" x="139.5" y="0.0" width="27.5" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nc4-sZ-jzu">
+                                                                                            <rect key="frame" x="148" y="0.0" width="19" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -414,13 +414,13 @@
                                                                                     <rect key="frame" x="0.0" y="75" width="167" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Courage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8v7-pc-196">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="131.5" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="141" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ce-58-GNM">
-                                                                                            <rect key="frame" x="133.5" y="0.0" width="33.5" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ce-58-GNM">
+                                                                                            <rect key="frame" x="143" y="0.0" width="24" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -431,13 +431,13 @@
                                                                                     <rect key="frame" x="0.0" y="90" width="167" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firepower" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjB-TC-NYs">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="137" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="145.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ES-ls-SRQ">
-                                                                                            <rect key="frame" x="139" y="0.0" width="28" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ES-ls-SRQ">
+                                                                                            <rect key="frame" x="147.5" y="0.0" width="19.5" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -448,13 +448,13 @@
                                                                                     <rect key="frame" x="0.0" y="105" width="167" height="15"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olZ-jn-a8i">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="115.5" height="15"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-QS-Ynq">
-                                                                                            <rect key="frame" x="117.5" y="0.0" width="49.5" height="15"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-QS-Ynq">
+                                                                                            <rect key="frame" x="130" y="0.0" width="37" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             <nil key="highlightedColor"/>
@@ -584,9 +584,11 @@
                         <outlet property="decepticonsCollectionView" destination="Z6x-yQ-EII" id="q7n-bb-kv3"/>
                         <outlet property="decepticonsPageControll" destination="EqY-0p-6ST" id="HY1-Oy-eaw"/>
                         <outlet property="fightButton" destination="zw2-y1-wLc" id="j5k-Zf-xhx"/>
+                        <outlet property="viewModel" destination="ydD-45-9yL" id="aua-VX-hcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="ydD-45-9yL" customClass="TransformerListViewModel" customModule="Transformer" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>

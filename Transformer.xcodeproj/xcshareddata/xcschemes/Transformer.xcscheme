@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -45,6 +46,16 @@
                BlueprintIdentifier = "0819317D21D32C9F00710E6C"
                BuildableName = "TransformerUITests.xctest"
                BlueprintName = "TransformerUITests"
+               ReferencedContainer = "container:Transformer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "08F25C6B21DC1F2400FEBC70"
+               BuildableName = "TransformerIntegrationTests.xctest"
+               BlueprintName = "TransformerIntegrationTests"
                ReferencedContainer = "container:Transformer.xcodeproj">
             </BuildableReference>
          </TestableReference>

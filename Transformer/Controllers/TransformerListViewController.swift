@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 private enum Constants: CGFloat {
     case navBar = 44
@@ -30,13 +31,38 @@ final class TransformerListViewController: UIViewController {
     
     @IBOutlet weak var decepticonsPageControll: UIPageControl!
     
+    @IBOutlet weak var viewModel: TransformerListViewModel!
+
+    
     // MARK: - Variables
     let transformerListCellId = "transformerListCellId"
+    
+    private var accessToken: String? {
+        get { return KeychainWrapper.standard.string(forKey: "accessToken") }
+        set { KeychainWrapper.standard.set(newValue!, forKey: "accessToken") }
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setupStyle()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Set Access Token
+        viewModel.setAccessToken(token: self.accessToken) { (errorMessage, token) in
+            guard errorMessage == nil, let token = token else {
+                self.showAlert(title: "Access Error", message: errorMessage ?? "No token found. Please contact our support team.")
+                return
+            }
+            
+            self.accessToken = token
+            
+            // TODO: Fetch Transformers
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -58,14 +84,15 @@ final class TransformerListViewController: UIViewController {
             // Set itemSize
             let viewWidth = view.bounds.width
             let viewHeight = view.bounds.height
-
+            
+            // Portrait
             if  viewWidth < viewHeight {
                 
                 let height = (viewHeight - totalVerticalMargin) / 2
 
                 layout.itemSize = CGSize(width: viewWidth - Constants.stackHorizontalMargin.rawValue, height: height)
             } else {
-                
+                // Landscape
                 let width = (viewWidth - Constants.stackHorizontalMargin.rawValue - Constants.stackSpaceInBetween.rawValue) / 2
                 
                 let height = viewHeight - totalVerticalMargin + 20
@@ -83,6 +110,7 @@ final class TransformerListViewController: UIViewController {
         
     }
     
+    // Helper
     func scrollToItemAfterRotation(index: Int, colletionView: UICollectionView) {
         let indexPath = IndexPath(item: index, section: 0)
         
@@ -105,7 +133,7 @@ final class TransformerListViewController: UIViewController {
 extension TransformerListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
