@@ -39,6 +39,27 @@ final class TransformerService: NSObject {
         }
     }
     
+    // MARK: - DELETE
+    func deleteTransformerBy(id: String, token: String, completion: @escaping ErrorMessageCompletionHandler) {
+        guard let urlRequest = NetworkRequestInfo(endPoint: .deleteTransformer, token: token, httpMethod: .delete, transformerId: id).urlRequest else {
+            completion("Url or AccessToken is not provided")
+            return
+        }
+        
+        Alamofire.request(urlRequest)
+            .validate()
+            .responseJSON { (response) in
+                
+                guard response.result.isSuccess else {
+                    let errorMessage = "Delete Transformers Error due to: \(response.result.error?.localizedDescription ?? "")"
+                    completion(errorMessage)
+                    return
+                }
+                
+                completion(nil)
+                
+        }
+    }
     // Helper
     func parseTransformersJSONIntoTransformers(transformersJson: NSArray, completion: @escaping TransformersCompletionHandler) {
         

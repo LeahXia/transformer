@@ -232,6 +232,9 @@
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <state key="normal" image="trash-can"/>
+                                                                    <connections>
+                                                                        <action selector="deleteButtonTapped:" destination="p45-uV-2uI" eventType="touchUpInside" id="sCL-lp-dy0"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </view>
@@ -482,7 +485,7 @@
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvp-fE-R54">
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvp-fE-R54">
                                                                     <rect key="frame" x="303" y="32" width="20" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="20" id="WE0-ds-uNY"/>
@@ -491,6 +494,9 @@
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <state key="normal" image="trash-can"/>
+                                                                    <connections>
+                                                                        <action selector="deleteButtonTapped:" destination="Q8x-LQ-VAU" eventType="touchUpInside" id="32r-9o-uB5"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </view>

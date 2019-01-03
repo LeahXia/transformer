@@ -51,7 +51,7 @@ class TransformerServiceTests: XCTestCase {
             if let errorMessage = errorMessage {
                 XCTFail("Error: \(errorMessage)")
             } else {
-                XCTAssertEqual(transformers?.count, 2)
+                XCTAssertNotNil(transformers)
                 promise.fulfill()
             }
         }

@@ -42,6 +42,10 @@ final class TransformerListViewModel: NSObject {
         return members[indexPath.item]
     }
     
+    func hasMember(_ teamIndex: Int) -> Bool {
+        return teams[teamIndex].getMembers().count > 0
+    }
+    
     // MARK: - Data
     func fetchAllTransformers(with token: String?, completion: @escaping TokenCompletionHandler) {
         // Already has token in Keychain
@@ -94,6 +98,15 @@ final class TransformerListViewModel: NSObject {
         
     }
     
+    // MARK: - Delete
+    func deleteTransformerBy(id: String, token: String, teamIndex: Int, completion: @escaping (_ errorMessage: String?, _ transformerIndex: Int?) -> ()) {
+        // Delete from server
+        transformerService.deleteTransformerBy(id: id, token: token) { [weak self] (errorMessage) in
+            // Delete from team
+            let transformerIndex = self?.teams[teamIndex].deleteMember(id: id)
+            completion(errorMessage, transformerIndex)
+        }
+    }
     
 }
 

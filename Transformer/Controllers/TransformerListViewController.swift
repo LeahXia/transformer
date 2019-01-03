@@ -160,7 +160,7 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func config(cell: TransformerListCollectionViewCell, indexPath: IndexPath, collectionView: UICollectionView) {
-        cell.layer.cornerRadius = CornerRadius.cell.rawValue
+        cell.transformerListCellDelegate = self
         
         let teamIndex = setTeamIndexAccordingTo(collectionView: collectionView)
         
@@ -169,9 +169,12 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
         }
 
         guard let member = viewModel.memberForItem(at: indexPath, teamIndex: teamIndex) else {
+            setTransformerInfoLabelsTextToQuestionMark(cell: cell)
             return
         }
         
+        cell.setupCell(transformer: member)
+    
         cell.transformerNameLabel.text = member.name
         cell.strengthValueLabel.text = "\(member.strength)"
         cell.intelligenceValueLabel.text = "\(member.intelligence)"
@@ -181,6 +184,21 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
         cell.courageValueLabel.text = "\(member.courage)"
         cell.firepowerValueLabel.text = "\(member.firepower)"
         cell.skillValueLabel.text = "\(member.skill)"
+    }
+    
+    // Helper
+    func setTransformerInfoLabelsTextToQuestionMark(cell: TransformerListCollectionViewCell) {
+        let demoTransformerText = "?"
+        cell.transformerNameLabel.text = demoTransformerText
+        cell.strengthValueLabel.text = demoTransformerText
+        cell.intelligenceValueLabel.text = demoTransformerText
+        cell.speedValueLabel.text = demoTransformerText
+        cell.rankValueLabel.text = demoTransformerText
+        cell.enduranceValueLabel.text = demoTransformerText
+        cell.courageValueLabel.text = demoTransformerText
+        cell.firepowerValueLabel.text = demoTransformerText
+        cell.skillValueLabel.text = demoTransformerText
+        cell.deleteButton.isHidden = true
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -196,5 +214,48 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
     func setTeamIndexAccordingTo(collectionView: UICollectionView) -> Int {
         return collectionView == autobotsCollectionView ? 0 : 1
     }
+    
+}
+
+// MARK: - Delegate
+extension TransformerListViewController: TransformerListCellDelegate {
+    func didDeleteButtonTapped(buttonTag: Int, transformer: Transformer?) {
+        
+        guard let transformer = transformer, let token = self.accessToken else {
+            showAlert(title: "Oops!", message: "Cannot delete this demo Transformer")
+            return
+        }
+        
+        let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] (action) in
+            self?.handleDeletion(id: transformer.id, token: token, teamIndex: buttonTag)
+        })
+        
+        alert.addAction(deleteAction)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+       
+    }
+    
+    func handleDeletion(id: String, token: String, teamIndex: Int) {
+        viewModel.deleteTransformerBy(id: id, token: token, teamIndex: teamIndex) { [weak self] (errorMessage, transformerIndex) in
+            
+            if let errorMessage = errorMessage {
+                self?.showAlert(title: "Oops!", message: "Cannot delete this Transformer due to \(errorMessage)")
+            } else if let transformerIndex = transformerIndex {
+                let collectionView = teamIndex == 0 ? self?.autobotsCollectionView : self?.decepticonsCollectionView
+                if let hasMember = self?.viewModel.hasMember(teamIndex), hasMember {
+                    collectionView?.deleteItems(at: [IndexPath(item: transformerIndex, section: 0)])
+                }
+                
+                collectionView?.reloadData()
+            }
+        }
+    }
+    
     
 }

@@ -46,6 +46,12 @@ final class Team {
         self.members.append(transformer)
     }
     
+    func deleteMember(id: String) -> Int? {
+        guard let index = members.firstIndex(where: { $0.id == id }) else { return nil }
+        self.members.remove(at: index)
+        return index
+    }
+    
     func downloadTeamIcon(url: String, completion: @escaping ImageCompletionHandler) {
         guard teamIconUrl == nil, teamIcon == nil else {
             completion(nil, nil)

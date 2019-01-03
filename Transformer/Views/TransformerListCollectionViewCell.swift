@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TransformerListCellDelegate: class {
+    func didDeleteButtonTapped(buttonTag: Int, transformer: Transformer?)
+}
+
 /// Display information of a Transformer
 final class TransformerListCollectionViewCell: UICollectionViewCell {
     
@@ -33,5 +37,20 @@ final class TransformerListCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var deleteButton: UIButton!
     
+    // MARK: - Variables
+    weak var transformerListCellDelegate: TransformerListCellDelegate?
+    var transformer: Transformer?
+    
+    // MARK: - Initialization
+    func setupCell(transformer: Transformer) {
+        self.transformer = transformer
+        self.layer.cornerRadius = CornerRadius.cell.rawValue
+        self.deleteButton.isHidden = false
+    }
+    
+    // MARK: - Actions
+    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        transformerListCellDelegate?.didDeleteButtonTapped(buttonTag: sender.tag, transformer: transformer)
+    }
     
 }
