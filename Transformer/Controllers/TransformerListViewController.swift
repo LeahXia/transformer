@@ -18,6 +18,11 @@ private enum Constants: CGFloat {
     case stackHorizontalMargin = 40
 }
 
+private enum segueIdentifier: String {
+    case listVCToCreateVCSegue = "listVCToCreateVCSegue"
+    case listVCToFightVCSegue = "listVCToFightVCSegue"
+}
+
 /// Containts 2 CollectionViews to display Transformers from 2 different teams
 final class TransformerListViewController: UIViewController {
     
@@ -36,6 +41,7 @@ final class TransformerListViewController: UIViewController {
     
     // MARK: - Variables
     let transformerListCellId = "transformerListCellId"
+    var selectedTransformer: Transformer?
     
     private var accessToken: String? {
         get { return KeychainWrapper.standard.string(forKey: "accessToken") }
@@ -140,6 +146,9 @@ final class TransformerListViewController: UIViewController {
     @IBAction func didFightButtonTapped(_ sender: UIButton) {
     }
    
+    deinit {
+        print("List VC deinit")
+    }
 }
 
 // MARK: - CollectionView Delegate & DataSource
@@ -201,6 +210,12 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
         cell.deleteButton.isHidden = true
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let teamIndex = setTeamIndexAccordingTo(collectionView: collectionView)
+        self.selectedTransformer = viewModel.memberForItem(at: indexPath, teamIndex: teamIndex)
+        performSegue(withIdentifier: segueIdentifier.listVCToCreateVCSegue.rawValue, sender: self)
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         if scrollView == autobotsCollectionView {
@@ -214,7 +229,6 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
     func setTeamIndexAccordingTo(collectionView: UICollectionView) -> Int {
         return collectionView == autobotsCollectionView ? 0 : 1
     }
-    
 }
 
 // MARK: - Delegate
@@ -238,7 +252,6 @@ extension TransformerListViewController: TransformerListCellDelegate {
         
         self.present(alert, animated: true, completion: nil)
         
-       
     }
     
     func handleDeletion(id: String, token: String, teamIndex: Int) {
@@ -256,6 +269,21 @@ extension TransformerListViewController: TransformerListCellDelegate {
             }
         }
     }
-    
+
+}
+
+extension TransformerListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case segueIdentifier.listVCToCreateVCSegue.rawValue:
+//            let createVC = segue.destination as? CreateTransformerViewController
+//            createVC?.transformer = transformer
+            break
+        case segueIdentifier.listVCToCreateVCSegue.rawValue:
+            break
+        default:
+            break
+        }
+    }
     
 }
