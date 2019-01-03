@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080AEB0F21DDFE4E008298EC /* CreateTransformerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080AEB0E21DDFE4E008298EC /* CreateTransformerViewController.swift */; };
 		0819316021D32C9A00710E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819315F21D32C9A00710E6C /* AppDelegate.swift */; };
 		0819316221D32C9A00710E6C /* TransformerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819316121D32C9A00710E6C /* TransformerListViewController.swift */; };
 		0819316521D32C9A00710E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0819316321D32C9A00710E6C /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		06EE5CFBED1BF47F7E9FCB1F /* Pods_TransformerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		080AEB0E21DDFE4E008298EC /* CreateTransformerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransformerViewController.swift; sourceTree = "<group>"; };
 		0819315C21D32C9A00710E6C /* Transformer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transformer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0819315F21D32C9A00710E6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0819316121D32C9A00710E6C /* TransformerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				0819316121D32C9A00710E6C /* TransformerListViewController.swift */,
+				080AEB0E21DDFE4E008298EC /* CreateTransformerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -546,11 +549,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Transformer/Pods-Transformer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KWStepper/KWStepper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KWStepper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				080AEB0F21DDFE4E008298EC /* CreateTransformerViewController.swift in Sources */,
 				08F0FF9E21DCAC3B00D89173 /* Transformer.swift in Sources */,
 				08F0FF9521DCAB8900D89173 /* Team.swift in Sources */,
 				08648C2921DC410E0098D1A8 /* NetworkRequestInfo.swift in Sources */,

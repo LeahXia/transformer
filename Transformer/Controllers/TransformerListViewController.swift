@@ -9,15 +9,6 @@
 import UIKit
 import SwiftKeychainWrapper
 
-private enum Constants: CGFloat {
-    case navBar = 44
-    case stackTopMargin = 12
-    case stackSpaceInBetween = 10
-    case fightButtonHeight = 66
-    case fightButtonMargin = 20
-    case stackHorizontalMargin = 40
-}
-
 private enum segueIdentifier: String {
     case listVCToCreateVCSegue = "listVCToCreateVCSegue"
     case listVCToFightVCSegue = "listVCToFightVCSegue"
@@ -87,38 +78,17 @@ final class TransformerListViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        let totalVerticalMargin = Constants.navBar.rawValue + Constants.stackTopMargin.rawValue + Constants.stackSpaceInBetween.rawValue + Constants.fightButtonHeight.rawValue + Constants.fightButtonMargin.rawValue
+        view.layoutIfNeeded()
 
-        setLayout(for: autobotsCollectionView, totalVerticalMargin: totalVerticalMargin)
-        setLayout(for: decepticonsCollectionView, totalVerticalMargin: totalVerticalMargin)
+        setLayout(for: autobotsCollectionView)
+        setLayout(for: decepticonsCollectionView)
         
     }
     
-    func setLayout(for collectionView: UICollectionView, totalVerticalMargin: CGFloat) {
-        
+    func setLayout(for collectionView: UICollectionView) {
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            // Set scrollDirection
             layout.scrollDirection = .horizontal
-            
-            // Set itemSize
-            let viewWidth = view.bounds.width
-            let viewHeight = view.bounds.height
-            
-            // Portrait
-            if  viewWidth < viewHeight {
-                
-                let height = (viewHeight - totalVerticalMargin) / 2
-
-                layout.itemSize = CGSize(width: viewWidth - Constants.stackHorizontalMargin.rawValue, height: height)
-            } else {
-                // Landscape
-                let width = (viewWidth - Constants.stackHorizontalMargin.rawValue - Constants.stackSpaceInBetween.rawValue) / 2
-                
-                let height = viewHeight - totalVerticalMargin + 20
-                
-                layout.itemSize = CGSize(width: width, height: height)
-            }
-            
+            layout.itemSize = autobotsCollectionView.frame.size
         }
     }
     
@@ -169,6 +139,7 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func config(cell: TransformerListCollectionViewCell, indexPath: IndexPath, collectionView: UICollectionView) {
+        cell.layer.cornerRadius = CornerRadius.cell.rawValue
         cell.transformerListCellDelegate = self
         
         let teamIndex = setTeamIndexAccordingTo(collectionView: collectionView)

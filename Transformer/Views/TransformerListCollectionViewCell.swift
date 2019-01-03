@@ -44,7 +44,6 @@ final class TransformerListCollectionViewCell: UICollectionViewCell {
     // MARK: - Initialization
     func setupCell(transformer: Transformer) {
         self.transformer = transformer
-        self.layer.cornerRadius = CornerRadius.cell.rawValue
         self.deleteButton.isHidden = false
     }
     
