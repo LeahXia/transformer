@@ -9,9 +9,10 @@ HTTPS<br/>
 `git clone https://github.com/LeahXia/transformer.git`<br/>
 or SSH<br/>
 `git clone git@github.com:LeahXia/transformer.git`<br/>
-3. Open `Transformer.xcodeproj`
-4. Press `cmd` + `R` to run the project
-5. Enjoy!
+3.  Run `pod install` in Terminal
+4. Open `Transformer.xcworkspace`
+5. Press `cmd` + `R` to run the project
+6. Enjoy!
 
 ## Assumptions
 1. Assumed that Storyboard is the preferred way to create the UI.
@@ -25,6 +26,10 @@ or SSH<br/>
 
 ## Languages and Frameworks
 - Swift 4.2 with Xcode 10.1
+
+## Libraries
+- Alamofire
+- SwiftKeychainWrapper
 
 ## Planning
 - Userflow: [userflow.jpg](./planning/userflow.jpg)
