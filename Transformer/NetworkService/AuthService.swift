@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 /// Handle Authorization for server
-class AuthService: NSObject {
+final class AuthService: NSObject {
 
     // MARK: - Token
     func getAccessToken(completion: @escaping TokenCompletionHandler) {
@@ -35,5 +35,3 @@ class AuthService: NSObject {
         }
     }
 }
-
-

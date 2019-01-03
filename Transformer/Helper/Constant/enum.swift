@@ -18,3 +18,9 @@ enum EndPoint: String {
     case transformers = "transformers"
     case deleteTransformer = "transformers/"
 }
+
+enum TeamInitial: String {
+    case Autobots = "A"
+    case Decepticons = "D"
+}
+

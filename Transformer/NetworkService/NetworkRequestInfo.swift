@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftKeychainWrapper
 
 /// Create url or urlRequest for Alamofire
 struct NetworkRequestInfo {
@@ -21,19 +20,19 @@ struct NetworkRequestInfo {
     // MARK: Initialization
     /// Convenient init for EndPoint .token or .transformers (GET), Return url to feed Alamofire
     init(endPoint: EndPoint) {
-        self.init(endPoint: endPoint, httpMethod: .get, transformerId: nil)
+        self.init(endPoint: endPoint, token: "", httpMethod: .get, transformerId: nil)
     }
     
-    init(endPoint: EndPoint, httpMethod: HTTPMethod, transformerId: String?) {
+    init(endPoint: EndPoint, token: String, httpMethod: HTTPMethod, transformerId: String?) {
         switch endPoint {
         case .token:
             self.url = setUrl(endPoint: endPoint)
             break
         case .transformers:
-            self.urlRequest = setUrlRequest(endPoint: endPoint, httpMethod: httpMethod, transformerId: nil)
+            self.urlRequest = setUrlRequest(endPoint: endPoint, token: token, httpMethod: httpMethod, transformerId: nil)
             break
         case .deleteTransformer:
-            self.urlRequest = setUrlRequest(endPoint: endPoint, httpMethod: httpMethod, transformerId: transformerId)
+            self.urlRequest = setUrlRequest(endPoint: endPoint, token: token, httpMethod: httpMethod, transformerId: transformerId)
             break
         }
         
@@ -45,18 +44,17 @@ struct NetworkRequestInfo {
         return URL(string: url)
     }
     
-    func setUrlRequest(endPoint: EndPoint, httpMethod: HTTPMethod, transformerId: String?) -> URLRequest? {
+    func setUrlRequest(endPoint: EndPoint, token: String, httpMethod: HTTPMethod, transformerId: String?) -> URLRequest? {
         
         let urlStr = baseUrl + endPoint.rawValue + (transformerId ?? "")
         
         // Set header
         guard endPoint != .token,
-            let accessToken = KeychainWrapper.standard.string(forKey: "accessToken"),
             let url = URL(string: urlStr) else {
                 return nil
         }
         var urlRequest = URLRequest(url: url)
-        urlRequest.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         // Set httpMethod

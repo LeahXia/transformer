@@ -51,18 +51,31 @@ final class TransformerListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Set Access Token
-        viewModel.setAccessToken(token: self.accessToken) { (errorMessage, token) in
+
+        viewModel.fetchAllTransformers(with: self.accessToken) { [weak self] (errorMessage, token) in
+            
             guard errorMessage == nil, let token = token else {
-                self.showAlert(title: "Access Error", message: errorMessage ?? "No token found. Please contact our support team.")
+                self?.showAlert(title: "Access Error", message: errorMessage ?? "No token found. Please contact our support team.")
                 return
             }
             
-            self.accessToken = token
+            self?.accessToken = token
             
-            // TODO: Fetch Transformers
+            self?.reloadDataAndUpdatePageControl()
         }
+    }
+    
+    // Helper
+    func reloadDataAndUpdatePageControl() {
+        autobotsCollectionView.reloadData()
+        decepticonsCollectionView.reloadData()
+        setPageControllsAfterFetchingData(pageControll: autobotsPageControll, teamIndex: 0)
+        setPageControllsAfterFetchingData(pageControll: decepticonsPageControll, teamIndex: 1)
+    }
+    
+    func setPageControllsAfterFetchingData(pageControll: UIPageControl?, teamIndex: Int) {
+        let memberCount = self.viewModel.numberOfMembers(teamIndex: teamIndex)
+        pageControll?.numberOfPages = memberCount == 0 ? 1 : memberCount
     }
     
     override func viewWillLayoutSubviews() {
@@ -126,26 +139,48 @@ final class TransformerListViewController: UIViewController {
     // MARK: - Actions
     @IBAction func didFightButtonTapped(_ sender: UIButton) {
     }
-    
+   
 }
 
 // MARK: - CollectionView Delegate & DataSource
 extension TransformerListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        let teamIndex = setTeamIndexAccordingTo(collectionView: collectionView)
+        let memberCount = viewModel.numberOfMembers(teamIndex: teamIndex)
+        return memberCount == 0 ? 1 : memberCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: transformerListCellId, for: indexPath) as! TransformerListCollectionViewCell
         
-        config(cell: cell, indexPath: indexPath)
+        config(cell: cell, indexPath: indexPath, collectionView: collectionView)
         
         return cell
     }
     
-    func config(cell: TransformerListCollectionViewCell, indexPath: IndexPath) {
+    func config(cell: TransformerListCollectionViewCell, indexPath: IndexPath, collectionView: UICollectionView) {
         cell.layer.cornerRadius = CornerRadius.cell.rawValue
+        
+        let teamIndex = setTeamIndexAccordingTo(collectionView: collectionView)
+        
+        if let image = viewModel.teams[teamIndex].teamIcon {
+            cell.teamImageView.image = image
+        }
+
+        guard let member = viewModel.memberForItem(at: indexPath, teamIndex: teamIndex) else {
+            return
+        }
+        
+        cell.transformerNameLabel.text = member.name
+        cell.strengthValueLabel.text = "\(member.strength)"
+        cell.intelligenceValueLabel.text = "\(member.intelligence)"
+        cell.speedValueLabel.text = "\(member.speed)"
+        cell.rankValueLabel.text = "\(member.rank)"
+        cell.enduranceValueLabel.text = "\(member.endurance)"
+        cell.courageValueLabel.text = "\(member.courage)"
+        cell.firepowerValueLabel.text = "\(member.firepower)"
+        cell.skillValueLabel.text = "\(member.skill)"
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -155,6 +190,11 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
         } else {
             decepticonsPageControll.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
         }
+    }
+    
+    // Helper
+    func setTeamIndexAccordingTo(collectionView: UICollectionView) -> Int {
+        return collectionView == autobotsCollectionView ? 0 : 1
     }
     
 }

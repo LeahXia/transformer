@@ -9,7 +9,7 @@
 import UIKit
 
 /// Display information of a Transformer
-class TransformerListCollectionViewCell: UICollectionViewCell {
+final class TransformerListCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var teamImageView: UIImageView!
 

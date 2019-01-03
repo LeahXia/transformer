@@ -12,13 +12,17 @@ import XCTest
 class NetworkRequestInfoTests: XCTestCase {
     
     var baseUrl: String!
+    var token: String!
    
     override func setUp() {
         baseUrl = "https://transformers-api.firebaseapp.com/"
+        token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2Zvcm1lcnNJZCI6Ii1MVkZqUkZWeTVQbkozVVRSOWZ4IiwiaWF0IjoxNTQ2NDY5MDk4fQ.fpcyOTPLkpOu0ybZetCZPnpX0qgTMicRQd5ILAkRyn8"
+
     }
 
     override func tearDown() {
         baseUrl = nil
+        token = nil
     }
 
     // MARK: Initialization
@@ -36,7 +40,8 @@ class NetworkRequestInfoTests: XCTestCase {
         // Given
         let url = URL(string: baseUrl + "transformers")
         // When
-        let networkRequestInfo = NetworkRequestInfo(endPoint: .transformers)
+        let networkRequestInfo = NetworkRequestInfo(endPoint: .transformers, token: token, httpMethod: .get, transformerId: nil)
+
         // Then
         XCTAssertNotNil(networkRequestInfo)
         XCTAssertEqual(networkRequestInfo.urlRequest?.url, url)
@@ -47,7 +52,7 @@ class NetworkRequestInfoTests: XCTestCase {
         // Given
         let url = URL(string: baseUrl + "transformers")
         // When
-        let networkRequestInfo = NetworkRequestInfo(endPoint: .transformers, httpMethod: .post, transformerId: nil)
+        let networkRequestInfo = NetworkRequestInfo(endPoint: .transformers, token: token, httpMethod: .post, transformerId: nil)
         // Then
         XCTAssertNotNil(networkRequestInfo)
         XCTAssertEqual(networkRequestInfo.urlRequest?.url, url)
@@ -60,7 +65,7 @@ class NetworkRequestInfoTests: XCTestCase {
         let transformerId = "dkfjafdkjfadk"
         let url = URL(string: baseUrl + "transformers/" + transformerId)
         // When
-        let networkRequestInfo = NetworkRequestInfo(endPoint: .deleteTransformer, httpMethod: .delete, transformerId: transformerId)
+        let networkRequestInfo = NetworkRequestInfo(endPoint: .deleteTransformer, token: token, httpMethod: .delete, transformerId: transformerId)
         // Then
         XCTAssertNotNil(networkRequestInfo)
         XCTAssertEqual(networkRequestInfo.urlRequest?.url, url)
