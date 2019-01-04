@@ -15,6 +15,8 @@
 		0819316D21D32C9F00710E6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0819316B21D32C9F00710E6C /* LaunchScreen.storyboard */; };
 		0819319721D37B6900710E6C /* TransformerListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819319621D37B6900710E6C /* TransformerListCollectionViewCell.swift */; };
 		0819319B21D4AC1300710E6C /* Transformers Movie.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0819319921D4AB9700710E6C /* Transformers Movie.ttf */; };
+		0826D44321DEBF6500F72845 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0826D44221DEBF6500F72845 /* Colors.swift */; };
+		0826D44521DED06900F72845 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0826D44421DED06900F72845 /* StringExtension.swift */; };
 		0833744A21DC87EC00DCB807 /* TransformerListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833744921DC87EC00DCB807 /* TransformerListVCTests.swift */; };
 		084F326321DD53C90084C210 /* TransformerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F326221DD53C90084C210 /* TransformerServiceTests.swift */; };
 		084F326521DD83090084C210 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F326421DD83090084C210 /* ImageService.swift */; };
@@ -22,9 +24,9 @@
 		08648C2B21DC603D0098D1A8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08648C2A21DC603D0098D1A8 /* AuthService.swift */; };
 		08648C3521DC675E0098D1A8 /* TransformerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08648C3421DC675E0098D1A8 /* TransformerListViewModel.swift */; };
 		08648C3821DC69F70098D1A8 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08648C3721DC69F70098D1A8 /* ViewControllerExtensions.swift */; };
-		08D0509821D8810600DACE09 /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D0509721D8810600DACE09 /* enum.swift */; };
+		08D0509821D8810600DACE09 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D0509721D8810600DACE09 /* Enum.swift */; };
 		08F0FF8B21DC8C0200D89173 /* NetworkRequestInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833744521DC843100DCB807 /* NetworkRequestInfoTests.swift */; };
-		08F0FF8E21DC981D00D89173 /* typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F0FF8D21DC981D00D89173 /* typealias.swift */; };
+		08F0FF8E21DC981D00D89173 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F0FF8D21DC981D00D89173 /* Typealias.swift */; };
 		08F0FF9121DC9C0900D89173 /* TransformerListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F0FF9021DC9C0900D89173 /* TransformerListViewModelTests.swift */; };
 		08F0FF9521DCAB8900D89173 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F0FF9421DCAB8900D89173 /* Team.swift */; };
 		08F0FF9921DCABE900D89173 /* TeamModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F0FF9721DCABE900D89173 /* TeamModelTests.swift */; };
@@ -78,6 +80,8 @@
 		0819318421D32C9F00710E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0819319621D37B6900710E6C /* TransformerListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListCollectionViewCell.swift; sourceTree = "<group>"; };
 		0819319921D4AB9700710E6C /* Transformers Movie.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Transformers Movie.ttf"; sourceTree = "<group>"; };
+		0826D44221DEBF6500F72845 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0826D44421DED06900F72845 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0833744421DC7C5000DCB807 /* Transformer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Transformer.entitlements; sourceTree = "<group>"; };
 		0833744521DC843100DCB807 /* NetworkRequestInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestInfoTests.swift; sourceTree = "<group>"; };
 		0833744921DC87EC00DCB807 /* TransformerListVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerListVCTests.swift; sourceTree = "<group>"; };
@@ -87,8 +91,8 @@
 		08648C2A21DC603D0098D1A8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		08648C3421DC675E0098D1A8 /* TransformerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerListViewModel.swift; sourceTree = "<group>"; };
 		08648C3721DC69F70098D1A8 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
-		08D0509721D8810600DACE09 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
-		08F0FF8D21DC981D00D89173 /* typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typealias.swift; sourceTree = "<group>"; };
+		08D0509721D8810600DACE09 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		08F0FF8D21DC981D00D89173 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		08F0FF9021DC9C0900D89173 /* TransformerListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListViewModelTests.swift; sourceTree = "<group>"; };
 		08F0FF9421DCAB8900D89173 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		08F0FF9721DCABE900D89173 /* TeamModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamModelTests.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 		08648C3621DC69DC0098D1A8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0826D44421DED06900F72845 /* StringExtension.swift */,
 				08648C3721DC69F70098D1A8 /* ViewControllerExtensions.swift */,
 			);
 			path = Extensions;
@@ -281,8 +286,9 @@
 		08F0FF8C21DC97EB00D89173 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				08D0509721D8810600DACE09 /* enum.swift */,
-				08F0FF8D21DC981D00D89173 /* typealias.swift */,
+				08D0509721D8810600DACE09 /* Enum.swift */,
+				08F0FF8D21DC981D00D89173 /* Typealias.swift */,
+				0826D44221DEBF6500F72845 /* Colors.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -607,16 +613,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				080AEB0F21DDFE4E008298EC /* CreateTransformerViewController.swift in Sources */,
+				0826D44321DEBF6500F72845 /* Colors.swift in Sources */,
 				08F0FF9E21DCAC3B00D89173 /* Transformer.swift in Sources */,
 				08F0FF9521DCAB8900D89173 /* Team.swift in Sources */,
+				0826D44521DED06900F72845 /* StringExtension.swift in Sources */,
 				08648C2921DC410E0098D1A8 /* NetworkRequestInfo.swift in Sources */,
 				0819316221D32C9A00710E6C /* TransformerListViewController.swift in Sources */,
 				0819316021D32C9A00710E6C /* AppDelegate.swift in Sources */,
 				08F0FFA021DCBDD600D89173 /* TransformerService.swift in Sources */,
 				08648C3521DC675E0098D1A8 /* TransformerListViewModel.swift in Sources */,
-				08F0FF8E21DC981D00D89173 /* typealias.swift in Sources */,
+				08F0FF8E21DC981D00D89173 /* Typealias.swift in Sources */,
 				084F326521DD83090084C210 /* ImageService.swift in Sources */,
-				08D0509821D8810600DACE09 /* enum.swift in Sources */,
+				08D0509821D8810600DACE09 /* Enum.swift in Sources */,
 				0819319721D37B6900710E6C /* TransformerListCollectionViewCell.swift in Sources */,
 				08648C3821DC69F70098D1A8 /* ViewControllerExtensions.swift in Sources */,
 				08648C2B21DC603D0098D1A8 /* AuthService.swift in Sources */,

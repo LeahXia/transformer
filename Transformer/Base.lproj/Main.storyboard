@@ -637,7 +637,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1060"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5h-YA-QDg" userLabel="AutobotsView">
-                                                <rect key="frame" x="12" y="0.0" width="175.5" height="306"/>
+                                                <rect key="frame" x="12" y="0.0" width="175.5" height="326"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klu-J8-VXH">
                                                         <rect key="frame" x="38" y="12" width="100" height="100"/>
@@ -669,7 +669,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mq-s5-Riy" userLabel="DecepticonsView">
-                                                <rect key="frame" x="187.5" y="0.0" width="175.5" height="306"/>
+                                                <rect key="frame" x="187.5" y="0.0" width="175.5" height="326"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-Gm-reH">
                                                         <rect key="frame" x="38" y="12" width="100" height="100"/>
@@ -700,7 +700,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1v-ax-Xjd">
-                                                <rect key="frame" x="14" y="314" width="349" height="10"/>
+                                                <rect key="frame" x="14" y="334" width="349" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="ZbE-Pr-rKQ"/>
                                                 </constraints>
@@ -709,7 +709,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pqq-4u-phR">
-                                                <rect key="frame" x="12" y="332" width="351" height="30"/>
+                                                <rect key="frame" x="12" y="352" width="351" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="cnT-Mf-3DJ"/>
                                                     <constraint firstAttribute="height" constant="30" id="dvM-Ce-3gg"/>
@@ -718,29 +718,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O4J-aE-iP6">
-                                                <rect key="frame" x="107.5" y="378" width="160" height="10"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attribute Points:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oH3-Oz-uWn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="10"/>
-                                                        <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ho-0I-kx2">
-                                                        <rect key="frame" x="142" y="0.0" width="18" height="10"/>
-                                                        <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="J51-xS-b8m"/>
-                                                    <constraint firstAttribute="height" constant="10" id="awM-86-cUo"/>
-                                                </constraints>
-                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c3W-4v-wyK">
-                                                <rect key="frame" x="12" y="412" width="351" height="636"/>
+                                                <rect key="frame" x="12" y="400" width="351" height="636"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plo-zX-xqh">
                                                         <rect key="frame" x="0.0" y="0.0" width="351" height="79.5"/>
@@ -754,12 +733,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Erl-mM-WNm">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Erl-mM-WNm">
                                                                 <rect key="frame" x="12" y="66.5" width="150" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="150" id="F6X-Mg-OF0"/>
                                                                     <constraint firstAttribute="height" constant="8" id="fxO-eu-iMl"/>
                                                                 </constraints>
+                                                                <color key="progressTintColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </progressView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDf-Qs-LaL">
                                                                 <rect key="frame" x="245" y="37.5" width="36" height="36"/>
@@ -814,12 +794,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lhR-js-jtG">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="lhR-js-jtG">
                                                                 <rect key="frame" x="12" y="66.5" width="150" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="8" id="9qa-74-gMx"/>
                                                                     <constraint firstAttribute="width" constant="150" id="GMd-A6-Y1e"/>
                                                                 </constraints>
+                                                                <color key="progressTintColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </progressView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjU-yp-p5l">
                                                                 <rect key="frame" x="245" y="37.5" width="36" height="36"/>
@@ -874,12 +855,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VOK-wb-W4T">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="VOK-wb-W4T">
                                                                 <rect key="frame" x="12" y="66.5" width="150" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="8" id="VZg-rM-gch"/>
                                                                     <constraint firstAttribute="width" constant="150" id="d3Q-av-eq3"/>
                                                                 </constraints>
+                                                                <color key="progressTintColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </progressView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVK-UH-gKt">
                                                                 <rect key="frame" x="245" y="37.5" width="36" height="36"/>
@@ -934,12 +916,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7W4-Hp-Vq3">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="7W4-Hp-Vq3">
                                                                 <rect key="frame" x="12" y="66.5" width="150" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="150" id="Exv-uQ-P9e"/>
                                                                     <constraint firstAttribute="height" constant="8" id="u7c-za-hDy"/>
                                                                 </constraints>
+                                                                <color key="progressTintColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </progressView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTC-uV-pDu">
                                                                 <rect key="frame" x="245" y="37.5" width="36" height="36"/>
@@ -994,12 +977,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qRF-hS-98m">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="qRF-hS-98m">
                                                                 <rect key="frame" x="12" y="66.5" width="150" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="8" id="1x0-lo-Ah6"/>
                                                                     <constraint firstAttribute="width" constant="150" id="sd9-FD-bh3"/>
                                                                 </constraints>
+                                                                <color key="progressTintColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </progressView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpi-0A-BeJ">
                                                                 <rect key="frame" x="245" y="37.5" width="36" height="36"/>
@@ -1054,12 +1038,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ojL-Xe-HGa">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="ojL-Xe-HGa">
                                                                 <rect key="frame" x="12" y="66.5" width="150" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="8" id="Th0-y5-33h"/>
                                                                     <constraint firstAttribute="width" constant="150" id="b7o-pu-15r"/>
                                                                 </constraints>
+                                                                <color key="progressTintColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </progressView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5b-zf-FQb">
                                                                 <rect key="frame" x="245" y="37.5" width="36" height="36"/>
@@ -1114,12 +1099,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gQz-0P-mMz">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="gQz-0P-mMz">
                                                                 <rect key="frame" x="12" y="66.5" width="150" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="150" id="APF-tH-1Ka"/>
                                                                     <constraint firstAttribute="height" constant="8" id="jmD-eT-amt"/>
                                                                 </constraints>
+                                                                <color key="progressTintColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </progressView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U20-Gw-B0w">
                                                                 <rect key="frame" x="245" y="37.5" width="36" height="36"/>
@@ -1174,12 +1160,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tkl-3h-K3h">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="tkl-3h-K3h">
                                                                 <rect key="frame" x="12" y="66.5" width="150" height="8"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="150" id="R5M-5a-pEu"/>
                                                                     <constraint firstAttribute="height" constant="8" id="VJS-qP-m3k"/>
                                                                 </constraints>
+                                                                <color key="progressTintColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </progressView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvH-xp-6Tq">
                                                                 <rect key="frame" x="245" y="37.5" width="36" height="36"/>
@@ -1230,16 +1217,14 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="O4J-aE-iP6" firstAttribute="top" secondItem="Pqq-4u-phR" secondAttribute="bottom" constant="16" id="56s-jc-owd"/>
                                             <constraint firstItem="c3W-4v-wyK" firstAttribute="trailing" secondItem="Pqq-4u-phR" secondAttribute="trailing" id="8TO-Fq-vpl"/>
                                             <constraint firstItem="Pqq-4u-phR" firstAttribute="trailing" secondItem="4Mq-s5-Riy" secondAttribute="trailing" id="Aa5-ga-aSW"/>
-                                            <constraint firstAttribute="bottom" secondItem="c3W-4v-wyK" secondAttribute="bottom" constant="12" id="B93-NY-mXW"/>
+                                            <constraint firstAttribute="bottom" secondItem="c3W-4v-wyK" secondAttribute="bottom" constant="24" id="B93-NY-mXW"/>
                                             <constraint firstItem="h5h-YA-QDg" firstAttribute="width" secondItem="4Mq-s5-Riy" secondAttribute="width" id="C59-yI-fbP"/>
                                             <constraint firstItem="h5h-YA-QDg" firstAttribute="height" secondItem="4Mq-s5-Riy" secondAttribute="height" id="F5z-Px-Owe"/>
                                             <constraint firstItem="h5h-YA-QDg" firstAttribute="leading" secondItem="QHz-vv-e3J" secondAttribute="leading" constant="12" id="H1p-zf-856"/>
                                             <constraint firstItem="X1v-ax-Xjd" firstAttribute="top" secondItem="h5h-YA-QDg" secondAttribute="bottom" constant="8" id="KNi-Z8-d0x"/>
                                             <constraint firstItem="c3W-4v-wyK" firstAttribute="height" secondItem="QHz-vv-e3J" secondAttribute="height" multiplier="0.6" id="KVW-lf-dwH"/>
-                                            <constraint firstItem="O4J-aE-iP6" firstAttribute="centerX" secondItem="QHz-vv-e3J" secondAttribute="centerX" id="TeY-f3-dcK"/>
                                             <constraint firstItem="4Mq-s5-Riy" firstAttribute="top" secondItem="QHz-vv-e3J" secondAttribute="top" id="UVN-FR-TM3"/>
                                             <constraint firstItem="c3W-4v-wyK" firstAttribute="leading" secondItem="Pqq-4u-phR" secondAttribute="leading" id="bge-85-rsm"/>
                                             <constraint firstItem="X1v-ax-Xjd" firstAttribute="leading" secondItem="Pqq-4u-phR" secondAttribute="leading" constant="2" id="bsf-bO-PP7"/>
@@ -1247,9 +1232,9 @@
                                             <constraint firstItem="4Mq-s5-Riy" firstAttribute="leading" secondItem="h5h-YA-QDg" secondAttribute="trailing" id="cvA-iJ-1cb"/>
                                             <constraint firstItem="Pqq-4u-phR" firstAttribute="top" secondItem="X1v-ax-Xjd" secondAttribute="bottom" constant="8" id="exC-5B-28i"/>
                                             <constraint firstItem="Pqq-4u-phR" firstAttribute="leading" secondItem="h5h-YA-QDg" secondAttribute="leading" id="j6S-i1-77X"/>
-                                            <constraint firstItem="c3W-4v-wyK" firstAttribute="top" secondItem="O4J-aE-iP6" secondAttribute="bottom" constant="24" id="lso-fR-dyF"/>
                                             <constraint firstItem="h5h-YA-QDg" firstAttribute="top" secondItem="QHz-vv-e3J" secondAttribute="top" id="mTQ-E3-M2Z"/>
                                             <constraint firstAttribute="trailing" secondItem="4Mq-s5-Riy" secondAttribute="trailing" constant="12" id="rRv-LK-4nb"/>
+                                            <constraint firstItem="c3W-4v-wyK" firstAttribute="top" secondItem="Pqq-4u-phR" secondAttribute="bottom" constant="18" id="wgX-aL-sbu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1266,9 +1251,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8hj-Ly-Glf" firstAttribute="top" secondItem="7wp-bO-jsJ" secondAttribute="top" id="30Y-4t-Zj5"/>
                             <constraint firstItem="8hj-Ly-Glf" firstAttribute="leading" secondItem="7wp-bO-jsJ" secondAttribute="leading" id="GEg-Cu-XHZ"/>
                             <constraint firstItem="8hj-Ly-Glf" firstAttribute="trailing" secondItem="7wp-bO-jsJ" secondAttribute="trailing" id="XJZ-qf-1bN"/>
-                            <constraint firstItem="8hj-Ly-Glf" firstAttribute="top" secondItem="7wp-bO-jsJ" secondAttribute="top" id="n3A-xj-lYt"/>
                             <constraint firstItem="8hj-Ly-Glf" firstAttribute="bottom" secondItem="7wp-bO-jsJ" secondAttribute="bottom" id="w9O-sG-NI5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7wp-bO-jsJ"/>
@@ -1282,11 +1267,43 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
-                        <outlet property="attributePointsLabel" destination="3Ho-0I-kx2" id="PEE-Ym-W20"/>
                         <outlet property="autobotsButton" destination="Klu-J8-VXH" id="hhD-Wo-Pav"/>
                         <outlet property="autobotsLabel" destination="3Au-tq-BGD" id="di1-Ky-1P2"/>
+                        <outlet property="courageDecreaseButton" destination="FrI-a1-fDx" id="rXH-sd-CbY"/>
+                        <outlet property="courageIncreaseButton" destination="W5b-zf-FQb" id="Fef-DR-erJ"/>
+                        <outlet property="courageNumberLabel" destination="12M-h6-KxW" id="1eY-JT-e7A"/>
+                        <outlet property="courageProgressView" destination="ojL-Xe-HGa" id="YGD-xD-Yol"/>
                         <outlet property="decepticonsButton" destination="4gC-Gm-reH" id="NTZ-rT-nEL"/>
                         <outlet property="decepticonsLabel" destination="YYt-Be-Coj" id="jfY-JH-ttu"/>
+                        <outlet property="enduranceDecreaseButton" destination="X7d-BC-eIo" id="Eya-6C-vUE"/>
+                        <outlet property="enduranceIncreaseButton" destination="bTC-uV-pDu" id="eP4-ZG-5I7"/>
+                        <outlet property="enduranceNumberLabel" destination="FQF-td-jK1" id="au0-mp-u90"/>
+                        <outlet property="enduranceProgressView" destination="7W4-Hp-Vq3" id="HQc-3C-ecR"/>
+                        <outlet property="firepowerDecreaseButton" destination="zVD-zz-lTj" id="grJ-UR-Qj4"/>
+                        <outlet property="firepowerIncreaseButton" destination="U20-Gw-B0w" id="vcC-fE-Gkb"/>
+                        <outlet property="firepowerNumberLabel" destination="IfC-ij-sYR" id="fJh-we-JLi"/>
+                        <outlet property="firepowerProgressView" destination="gQz-0P-mMz" id="f4f-gz-wE2"/>
+                        <outlet property="intelligenceDecreaseButton" destination="SoT-jO-m3M" id="Jvh-bl-geW"/>
+                        <outlet property="intelligenceIncreaseButton" destination="DjU-yp-p5l" id="bgw-4P-t8F"/>
+                        <outlet property="intelligenceNumberLabel" destination="1tv-3h-9gj" id="CNR-Td-Z8B"/>
+                        <outlet property="intelligenceProgressView" destination="lhR-js-jtG" id="BMi-BN-8te"/>
+                        <outlet property="rankDecreaseButton" destination="fRm-fu-LHQ" id="d10-um-cdz"/>
+                        <outlet property="rankIncreaseButton" destination="mpi-0A-BeJ" id="shQ-ob-O1k"/>
+                        <outlet property="rankNumberLabel" destination="jOK-iY-dLE" id="p3z-HW-qEv"/>
+                        <outlet property="rankProgressView" destination="qRF-hS-98m" id="aDH-Pc-sgM"/>
+                        <outlet property="scrollView" destination="8hj-Ly-Glf" id="ABe-iv-dbi"/>
+                        <outlet property="skillDecreaseButton" destination="XUY-Mz-o1d" id="1ax-7e-TMJ"/>
+                        <outlet property="skillIncreaseButton" destination="tvH-xp-6Tq" id="KHR-nw-tDZ"/>
+                        <outlet property="skillNumberLabel" destination="i4u-M0-JSd" id="lJ4-fv-JdK"/>
+                        <outlet property="skillProgressView" destination="tkl-3h-K3h" id="ZKd-mf-wcV"/>
+                        <outlet property="speedDecreaseButton" destination="QnF-h7-f3M" id="EQC-mA-hlf"/>
+                        <outlet property="speedIncreaseButton" destination="wVK-UH-gKt" id="HbR-xN-5e6"/>
+                        <outlet property="speedNumberLabel" destination="lIs-NV-C87" id="gND-Rs-5iT"/>
+                        <outlet property="speedProgressView" destination="VOK-wb-W4T" id="QJo-3m-dwS"/>
+                        <outlet property="strengthDecreaseButton" destination="XAL-30-TWd" id="21z-aX-U8d"/>
+                        <outlet property="strengthIncreaseButton" destination="KDf-Qs-LaL" id="uhA-OQ-eKE"/>
+                        <outlet property="strengthNumberLabel" destination="zis-Gh-faH" id="HAt-15-JuX"/>
+                        <outlet property="strengthProgressView" destination="Erl-mM-WNm" id="ayr-7H-sUV"/>
                         <outlet property="transformerNameTextField" destination="Pqq-4u-phR" id="p6d-Iz-AAB"/>
                     </connections>
                 </viewController>

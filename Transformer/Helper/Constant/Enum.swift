@@ -1,5 +1,5 @@
 //
-//  enum.swift
+//  Enum.swift
 //  Transformer
 //
 //  Created by Leah Xia on 2018-12-29.
