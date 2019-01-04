@@ -9,15 +9,6 @@
 import UIKit
 import SwiftKeychainWrapper
 
-private enum Constants: CGFloat {
-    case navBar = 44
-    case stackTopMargin = 12
-    case stackSpaceInBetween = 10
-    case fightButtonHeight = 66
-    case fightButtonMargin = 20
-    case stackHorizontalMargin = 40
-}
-
 private enum segueIdentifier: String {
     case listVCToCreateVCSegue = "listVCToCreateVCSegue"
     case listVCToFightVCSegue = "listVCToFightVCSegue"
@@ -42,6 +33,7 @@ final class TransformerListViewController: UIViewController {
     // MARK: - Variables
     let transformerListCellId = "transformerListCellId"
     var selectedTransformer: Transformer?
+    var shouldEdit = false
     
     private var accessToken: String? {
         get { return KeychainWrapper.standard.string(forKey: "accessToken") }
@@ -51,7 +43,6 @@ final class TransformerListViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupStyle()
     }
     
@@ -87,38 +78,17 @@ final class TransformerListViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        let totalVerticalMargin = Constants.navBar.rawValue + Constants.stackTopMargin.rawValue + Constants.stackSpaceInBetween.rawValue + Constants.fightButtonHeight.rawValue + Constants.fightButtonMargin.rawValue
+        view.layoutIfNeeded()
 
-        setLayout(for: autobotsCollectionView, totalVerticalMargin: totalVerticalMargin)
-        setLayout(for: decepticonsCollectionView, totalVerticalMargin: totalVerticalMargin)
+        setLayout(for: autobotsCollectionView)
+        setLayout(for: decepticonsCollectionView)
         
     }
     
-    func setLayout(for collectionView: UICollectionView, totalVerticalMargin: CGFloat) {
-        
+    func setLayout(for collectionView: UICollectionView) {
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            // Set scrollDirection
             layout.scrollDirection = .horizontal
-            
-            // Set itemSize
-            let viewWidth = view.bounds.width
-            let viewHeight = view.bounds.height
-            
-            // Portrait
-            if  viewWidth < viewHeight {
-                
-                let height = (viewHeight - totalVerticalMargin) / 2
-
-                layout.itemSize = CGSize(width: viewWidth - Constants.stackHorizontalMargin.rawValue, height: height)
-            } else {
-                // Landscape
-                let width = (viewWidth - Constants.stackHorizontalMargin.rawValue - Constants.stackSpaceInBetween.rawValue) / 2
-                
-                let height = viewHeight - totalVerticalMargin + 20
-                
-                layout.itemSize = CGSize(width: width, height: height)
-            }
-            
+            layout.itemSize = autobotsCollectionView.frame.size
         }
     }
     
@@ -169,6 +139,7 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func config(cell: TransformerListCollectionViewCell, indexPath: IndexPath, collectionView: UICollectionView) {
+        cell.layer.cornerRadius = CornerRadius.cell.rawValue
         cell.transformerListCellDelegate = self
         
         let teamIndex = setTeamIndexAccordingTo(collectionView: collectionView)
@@ -213,6 +184,7 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let teamIndex = setTeamIndexAccordingTo(collectionView: collectionView)
         self.selectedTransformer = viewModel.memberForItem(at: indexPath, teamIndex: teamIndex)
+        self.shouldEdit = true
         performSegue(withIdentifier: segueIdentifier.listVCToCreateVCSegue.rawValue, sender: self)
     }
     
@@ -272,17 +244,27 @@ extension TransformerListViewController: TransformerListCellDelegate {
 
 }
 
+// MARK: - Segues
 extension TransformerListViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case segueIdentifier.listVCToCreateVCSegue.rawValue:
-//            let createVC = segue.destination as? CreateTransformerViewController
-//            createVC?.transformer = transformer
+            handleToCreateVCSegue(segue: segue)
             break
         case segueIdentifier.listVCToCreateVCSegue.rawValue:
             break
         default:
             break
+        }
+    }
+    
+    // Helper
+    func handleToCreateVCSegue(segue: UIStoryboardSegue) {
+        if selectedTransformer == nil, shouldEdit {
+            showAlert(title: "Oops", message: "No Transformer is selected")
+        } else {
+            let createVC = segue.destination as? CreateTransformerViewController
+            createVC?.transformer = selectedTransformer
         }
     }
     

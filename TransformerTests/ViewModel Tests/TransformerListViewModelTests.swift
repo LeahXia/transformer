@@ -31,7 +31,7 @@ class TransformerListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.teams[1].name, "\(TeamInitial.Decepticons)")
     }
     
-    //
+    // MARK: - Fetch All Transformers
     func testFetchAllTransformers_WithNoTokenPassedIn_ReturnsNewToken() {
         // Given
         let promise = expectation(description: "Token is not nil")

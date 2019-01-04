@@ -30,6 +30,7 @@ or SSH<br/>
 ## Libraries
 - Alamofire
 - SwiftKeychainWrapper
+- KWStepper
 
 ## Planning
 - Userflow: [userflow.jpg](./planning/userflow.jpg)

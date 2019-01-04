@@ -1,5 +1,5 @@
 //
-//  typealias.swift
+//  Typealias.swift
 //  Transformer
 //
 //  Created by Leah Xia on 2019-01-01.

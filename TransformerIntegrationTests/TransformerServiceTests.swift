@@ -13,10 +13,9 @@ class TransformerServiceTests: XCTestCase {
 
     var sut: TransformerService!
     var token: String!
-
     override func setUp() {
         sut = TransformerService()
-        token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2Zvcm1lcnNJZCI6Ii1MVjBVVEdpUFNWX0ZGOVVDMmtsIiwiaWF0IjoxNTQ2MjEzMjU2fQ.U9bGeqazDXHMe8E4blPP1lF6KKj-d31n-wPampZHRmM"
+        token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2Zvcm1lcnNJZCI6Ii1MVk1vU0Z4UlE2TnRNVW1tVHpiIiwiaWF0IjoxNTQ2NTg3ODUzfQ.B05G5ZL72bRGxRVaCDF9s3BUfRSIQKScqi1cE7J-93g"
 
     }
     
@@ -25,23 +24,7 @@ class TransformerServiceTests: XCTestCase {
         token = nil
     }
     
-//    func testgetAccessToken_ReturnsToken() {
-//        // Given
-//        let promise = expectation(description: "Token is not nil")
-//        // When
-//        sut.getAccessToken() { (errorMessage, token) in
-//            // Then
-//            if let errorMessage = errorMessage {
-//                XCTFail("Error: \(errorMessage)")
-//            } else {
-//                XCTAssertNotNil(token)
-//                promise.fulfill()
-//            }
-//        }
-//
-//        waitForExpectations(timeout: 5, handler: nil)
-//    }
-    
+    // MARK: - GET
     func testGetfetchAllTransformers_ReturnsTransformers() {
         // Given
         let promise = expectation(description: "Transformers is not nil")
@@ -73,5 +56,20 @@ class TransformerServiceTests: XCTestCase {
         
         wait(for: [promise], timeout: 5)
     }
+    
+    // MARK: - POST
+    func testCreateTransformer_WithValidInput_ReturnsNoError() {
+        // Given
+        let promise = expectation(description: "Transformers is not nil")
+        let transformer = Transformer(id: "", name: "BumbleBee", teamInitial: "D", teamIconUrl: "")
 
+        // When
+        self.sut.createOrEdit(transformer: transformer, token: self.token, httpMethod: .post) { (errorMessage) in
+            // Then
+            XCTAssertNil(errorMessage)
+            promise.fulfill()
+        }
+        
+        wait(for: [promise], timeout: 5)
+    }
 }

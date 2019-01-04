@@ -41,9 +41,16 @@ final class Team {
     
     func addMember(transformer: Transformer) {
         guard members.count < 3 else { return }
-        let isTransformerInTeam = members.contains { $0.id == transformer.id }
-        guard !isTransformerInTeam else { return }
-        self.members.append(transformer)
+        let indexOfExsitedMember = members.firstIndex(where: { $0.id == transformer.id })
+        
+        guard let index = indexOfExsitedMember else {
+            self.members.append(transformer)
+            return
+        }
+        
+        self.members[index].updateWithNew(transformer: transformer)
+
+
     }
     
     func deleteMember(id: String) -> Int? {

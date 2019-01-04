@@ -6,6 +6,7 @@ target 'Transformer' do
   # Pods for Transformer
   pod 'Alamofire'
   pod 'SwiftKeychainWrapper'
+  pod 'KWStepper'
 
   target 'TransformerTests' do
     inherit! :search_paths
