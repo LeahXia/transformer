@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -107,7 +107,7 @@
 		3F9186DFDB2518B17CE1297A3B3667AE /* SwiftKeychainWrapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftKeychainWrapper-dummy.m"; sourceTree = "<group>"; };
 		41CFBD85FED0FCF31C0A53BCB4CDAF72 /* Pods-TransformerUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TransformerUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		42F35676AB7E05224AB1246CC5085448 /* SwiftKeychainWrapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftKeychainWrapper.modulemap; sourceTree = "<group>"; };
-		431B846D46D9E2546DC3E652A555DE28 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		431B846D46D9E2546DC3E652A555DE28 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4434FB15E1CA41E145AF28713C639960 /* Pods-TransformerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TransformerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4622E254FB2D8FFB23B57DEA0B2EDD95 /* KWStepper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KWStepper.modulemap; sourceTree = "<group>"; };
 		46EDEA3552B27761B0270B7A47F81117 /* KWStepper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KWStepper-umbrella.h"; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		658C7709C16AFE99235A7031DEFEF77C /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		679C92BA982C9FA6B3F3E722007EC812 /* Pods-Transformer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Transformer-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6E1BD71F96216C9069BC5411649726FB /* Pods-Transformer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Transformer.modulemap"; sourceTree = "<group>"; };
-		752E3678E2B1DC5E503FE911371624E5 /* Pods_TransformerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TransformerUITests.framework; path = "Pods-TransformerUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		752E3678E2B1DC5E503FE911371624E5 /* Pods_TransformerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		760055AC1F2E0259AE755B9361F69DAB /* Pods-TransformerTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TransformerTests-frameworks.sh"; sourceTree = "<group>"; };
 		77C56153DB284D0ABB9BE9C5124CF172 /* KeychainWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = SwiftKeychainWrapper/KeychainWrapper.swift; sourceTree = "<group>"; };
 		78D3D605EA9BCCC1F5D2EDD10EA1F2E4 /* Pods-TransformerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TransformerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		83FD73DF2989E1000BF31335F650800E /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		8C2DDA96D1BD002E620A942525A3B5BA /* Pods-TransformerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TransformerTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9148CEB547BF42FECB779E172BA6565A /* Pods-Transformer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Transformer-frameworks.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98F6C9A6417C472C820CD66709F68226 /* KWStepper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KWStepper.swift; path = Source/KWStepper.swift; sourceTree = "<group>"; };
 		9976597068AADCA4D048829770E98D9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1FE5C497B75EC651485501BF687C343 /* Pods-TransformerUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TransformerUITests-dummy.m"; sourceTree = "<group>"; };
@@ -142,12 +142,12 @@
 		AC5F4820BCD3600A4E7E0F9F4C86A3DE /* Pods-Transformer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Transformer.debug.xcconfig"; sourceTree = "<group>"; };
 		AC66AB16300CD8BBDE9034C8174D5897 /* KWStepper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KWStepper.xcconfig; sourceTree = "<group>"; };
 		B54037E21C168206AC6E20B2A042AA94 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		B609BC28E39E1E93C87320821EB40AF2 /* Pods_TransformerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TransformerTests.framework; path = "Pods-TransformerTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B65786B630E7DDA1546C124915EE5E2B /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftKeychainWrapper.framework; path = SwiftKeychainWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B609BC28E39E1E93C87320821EB40AF2 /* Pods_TransformerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B65786B630E7DDA1546C124915EE5E2B /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftKeychainWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8FA3C253234ED9C026F65D43C5FFE9B /* Pods-TransformerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TransformerTests-umbrella.h"; sourceTree = "<group>"; };
 		BD9CC2D0718238BE120A968F0BD3BC2E /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		BF5B5F72939C4AA0A95A4DA8197F1FE8 /* Pods-TransformerUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TransformerUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C2DC2158C5CE0CF9C75721A0E0CF8E0D /* Pods_Transformer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Transformer.framework; path = "Pods-Transformer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2DC2158C5CE0CF9C75721A0E0CF8E0D /* Pods_Transformer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transformer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6082CCE359F80FF1F62188A0F6BF6EE /* SwiftKeychainWrapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftKeychainWrapper-prefix.pch"; sourceTree = "<group>"; };
 		C72B059D9D19EFADC65A7B53264570FA /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		CE05F401505B6C9823C5F0D0888AEE44 /* Pods-Transformer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Transformer-dummy.m"; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		DC580AB2ED28CB613B3A20798F007312 /* Pods-TransformerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TransformerTests.modulemap"; sourceTree = "<group>"; };
 		DCF4C605FAA0C17A2E64735B70C4B803 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		DFA6571E10AD1E1D934DD2B1C29B5640 /* Pods-Transformer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Transformer-umbrella.h"; sourceTree = "<group>"; };
-		E622FE1D62F4610051AFDB4BA587319A /* KWStepper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KWStepper.framework; path = KWStepper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E622FE1D62F4610051AFDB4BA587319A /* KWStepper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KWStepper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BA128060CCCF63F9E08E4E9152FE3D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0BEB2441398519C578BC1CB654D42AB /* KWStepper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KWStepper-prefix.pch"; sourceTree = "<group>"; };
 		F0ED8B3FF460A551910C4C820CF282E6 /* Pods-TransformerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TransformerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,7 +228,6 @@
 				08CE32FC15B5DE2ADBB9B0743E8D7DDB /* SwiftKeychainWrapper.h */,
 				E72E876010CF46EF59E78EE2230A6157 /* Support Files */,
 			);
-			name = SwiftKeychainWrapper;
 			path = SwiftKeychainWrapper;
 			sourceTree = "<group>";
 		};
@@ -239,7 +238,6 @@
 				369BE2F686BD19CDC9FAC3F8ADA27BC3 /* KWStepper+Chaining.swift */,
 				FCB8E3CAE73227F785A3D20BCC9A156E /* Support Files */,
 			);
-			name = KWStepper;
 			path = KWStepper;
 			sourceTree = "<group>";
 		};
@@ -330,7 +328,6 @@
 				F553FB6CF9450B9EF58377E4CA9FA8E3 /* Validation.swift */,
 				DE707DB07C0867793E356AB5BBA880A6 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -594,7 +591,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -742,11 +739,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-TransformerUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TransformerUITests/Pods-TransformerUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -779,11 +772,7 @@
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				PRODUCT_MODULE_NAME = Alamofire;
 				PRODUCT_NAME = Alamofire;
@@ -817,11 +806,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-TransformerTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TransformerTests/Pods-TransformerTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -856,11 +841,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Transformer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Transformer/Pods-Transformer.modulemap";
 				OTHER_LDFLAGS = "";
@@ -895,11 +876,7 @@
 				INFOPLIST_FILE = "Target Support Files/KWStepper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/KWStepper/KWStepper.modulemap";
 				PRODUCT_MODULE_NAME = KWStepper;
 				PRODUCT_NAME = KWStepper;
@@ -932,11 +909,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-TransformerTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TransformerTests/Pods-TransformerTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1069,6 +1042,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -1091,11 +1065,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-TransformerUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TransformerUITests/Pods-TransformerUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1129,11 +1099,7 @@
 				INFOPLIST_FILE = "Target Support Files/SwiftKeychainWrapper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap";
 				PRODUCT_MODULE_NAME = SwiftKeychainWrapper;
 				PRODUCT_NAME = SwiftKeychainWrapper;
@@ -1166,11 +1132,7 @@
 				INFOPLIST_FILE = "Target Support Files/KWStepper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/KWStepper/KWStepper.modulemap";
 				PRODUCT_MODULE_NAME = KWStepper;
 				PRODUCT_NAME = KWStepper;
@@ -1204,11 +1166,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Transformer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Transformer/Pods-Transformer.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1243,11 +1201,7 @@
 				INFOPLIST_FILE = "Target Support Files/SwiftKeychainWrapper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap";
 				PRODUCT_MODULE_NAME = SwiftKeychainWrapper;
 				PRODUCT_NAME = SwiftKeychainWrapper;
@@ -1279,11 +1233,7 @@
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				PRODUCT_MODULE_NAME = Alamofire;
 				PRODUCT_NAME = Alamofire;
