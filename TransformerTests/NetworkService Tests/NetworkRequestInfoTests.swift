@@ -28,7 +28,7 @@ class NetworkRequestInfoTests: XCTestCase {
     // MARK: Initialization
     func testInitNetworkRequestInfo_WithTokenEndPoint_SetsUrl() {
         // Given
-        let url = URL(string: baseUrl + "allspark")
+        let url = baseUrl + "allspark"
         // When
         let networkRequestInfo = NetworkRequestInfo(endPoint: .token)
         // Then
@@ -38,38 +38,46 @@ class NetworkRequestInfoTests: XCTestCase {
     
     func testInitNetworkRequestInfo_WithTransformerEndPoint_SetsGetUrlRequest() {
         // Given
-        let url = URL(string: baseUrl + "transformers")
+        let url = baseUrl + "transformers"
         // When
-        let networkRequestInfo = NetworkRequestInfo(endPoint: .transformers, token: token, httpMethod: .get, transformerId: nil)
+        var networkRequestInfo = NetworkRequestInfo(endPoint: .transformers)
+        // Then
+        XCTAssertNotNil(networkRequestInfo)
+        XCTAssertEqual(networkRequestInfo.url, url)
+        XCTAssertEqual(networkRequestInfo.headers?.count, 2)
+        
+        // When
+        networkRequestInfo = NetworkRequestInfo(endPoint: .transformers, token: token, httpMethod: .get, transformerId: nil, transformer: nil)
 
         // Then
         XCTAssertNotNil(networkRequestInfo)
-        XCTAssertEqual(networkRequestInfo.urlRequest?.url, url)
-        XCTAssertEqual(networkRequestInfo.urlRequest?.allHTTPHeaderFields?.count, 2)
+        XCTAssertEqual(networkRequestInfo.url, url)
+        XCTAssertEqual(networkRequestInfo.headers?.count, 2)
     }
     
     func testInitNetworkRequestInfo_ForPOSTTransformer_SetsPOSTUrlRequest() {
         // Given
-        let url = URL(string: baseUrl + "transformers")
+        let url = baseUrl + "transformers"
+        let transformer = Transformer(id: "", name: "BumbleBee", teamInitial: "D", teamIconUrl: "")
         // When
-        let networkRequestInfo = NetworkRequestInfo(endPoint: .transformers, token: token, httpMethod: .post, transformerId: nil)
+        let networkRequestInfo = NetworkRequestInfo(endPoint: .transformers, token: token, httpMethod: .post, transformerId: nil, transformer: transformer)
+
         // Then
         XCTAssertNotNil(networkRequestInfo)
-        XCTAssertEqual(networkRequestInfo.urlRequest?.url, url)
-        XCTAssertEqual(networkRequestInfo.urlRequest?.allHTTPHeaderFields?.count, 2)
-        XCTAssertEqual(networkRequestInfo.urlRequest?.httpMethod, "POST")
+        XCTAssertEqual(networkRequestInfo.url, url)
+        XCTAssertEqual(networkRequestInfo.headers?.count, 2)
+        XCTAssertEqual(networkRequestInfo.parameters?.count, 10)
     }
     
     func testInitNetworkRequestInfo_ForDELETETransformer_SetsDELETEUrlRequest() {
         // Given
         let transformerId = "dkfjafdkjfadk"
-        let url = URL(string: baseUrl + "transformers/" + transformerId)
+        let url = baseUrl + "transformers/" + transformerId
         // When
-        let networkRequestInfo = NetworkRequestInfo(endPoint: .deleteTransformer, token: token, httpMethod: .delete, transformerId: transformerId)
+        let networkRequestInfo = NetworkRequestInfo(endPoint: .deleteTransformer, token: token, httpMethod: .delete, transformerId: transformerId, transformer: nil)
         // Then
         XCTAssertNotNil(networkRequestInfo)
-        XCTAssertEqual(networkRequestInfo.urlRequest?.url, url)
-        XCTAssertEqual(networkRequestInfo.urlRequest?.allHTTPHeaderFields?.count, 2)
-        XCTAssertEqual(networkRequestInfo.urlRequest?.httpMethod, "DELETE")
+        XCTAssertEqual(networkRequestInfo.url, url)
+        XCTAssertEqual(networkRequestInfo.headers?.count, 2)
     }
 }

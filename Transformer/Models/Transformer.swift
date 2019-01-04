@@ -36,7 +36,24 @@ struct Transformer {
         self.init(id: id, name: name, teamInitial: teamInitial, teamIconUrl: teamIconUrl, strength: defaultSpecValue, intelligence: defaultSpecValue, speed: defaultSpecValue, endurance: defaultSpecValue, rank: defaultSpecValue, courage: defaultSpecValue, firepower: defaultSpecValue, skill: defaultSpecValue)
     }
     
-    init(id: String, name: String, teamInitial: String, teamIconUrl: String, strength: Int, intelligence: Int, speed: Int, endurance: Int, rank: Int, courage: Int, firepower: Int, skill: Int) {
+    init(name: String, teamInitial: String, specValues: [Int]) {
+        self.id = ""
+        self.name = name
+        self.teamInitial = teamInitial
+        self.teamIconUrl = ""
+        
+        self.strength = specValues[0]
+        self.intelligence = specValues[1]
+        self.speed = specValues[2]
+        self.endurance = specValues[3]
+        self.rank = specValues[4]
+        self.courage = specValues[5]
+        self.firepower = specValues[6]
+        self.skill = specValues[7]
+        
+    }
+    
+    init(id: String = "", name: String, teamInitial: String, teamIconUrl: String = "", strength: Int, intelligence: Int, speed: Int, endurance: Int, rank: Int, courage: Int, firepower: Int, skill: Int) {
         self.id = id
         self.name = name
         self.teamInitial = teamInitial
@@ -85,5 +102,17 @@ struct Transformer {
         self.firepower = Int(firepower) ?? defaultSpecValue
         self.skill = Int(skill) ?? defaultSpecValue
 
+    }
+    
+    func getHttpParameters() -> JSONDictionary {
+        var parameters = [String: Any]()
+
+        let mirror = Mirror(reflecting: self)
+        for child in mirror.children {
+            guard var key = child.label, key != "teamIconUrl", key != "id" else { continue }
+            if key == "teamInitial" { key = "team" }
+            parameters[key] = "\(child.value)"
+        }
+        return parameters
     }
 }

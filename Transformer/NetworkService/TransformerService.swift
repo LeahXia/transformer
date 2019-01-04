@@ -15,12 +15,14 @@ final class TransformerService: NSObject {
     // MARK: - GET
     func fetchAllTransformers(token: String, completion: @escaping TransformersCompletionHandler) {
         
-        guard let urlRequest = NetworkRequestInfo(endPoint: .transformers, token: token, httpMethod: .get, transformerId: nil).urlRequest else {
-            completion("Url or AccessToken is not provided", nil)
+        let requestInfo = NetworkRequestInfo(endPoint: .transformers, token: token)
+
+        guard let url = requestInfo.url, let headers = requestInfo.headers else {
+            completion("Url or access token is not valid. Please contact our support team", nil)
             return
         }
 
-        Alamofire.request(urlRequest)
+        Alamofire.request(url, headers: headers)
             .validate()
             .responseJSON { (response) in
                 
@@ -39,14 +41,49 @@ final class TransformerService: NSObject {
         }
     }
     
+    func createOrEdit(transformer: Transformer, token: String, httpMethod: HTTPMethod, completion: @escaping ErrorMessageCompletionHandler) {
+        
+        let requestInfo = NetworkRequestInfo(endPoint: .transformers, token: token, httpMethod: httpMethod, transformerId: nil, transformer: transformer)
+        
+        guard let url = requestInfo.url,
+            let headers = requestInfo.headers,
+            let parameters = requestInfo.parameters else {
+                completion("Url or access token is not valid. Please contact our support team")
+                return
+        }
+        print("url \(url), method: \(httpMethod), token: \(token)")
+        Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .validate()
+            .responseJSON { (response) in
+
+                guard response.result.isSuccess else {
+                    let errorMessage = "Create or Edit Transformers Error due to: \(response.result.error?.localizedDescription ?? "")"
+                    completion(errorMessage)
+                    return
+                }
+                
+                let value = response.result.value as? JSONDictionary
+                print("----value ", value)
+//                self.parseTransformersJSONIntoTransformers(transformersJson: [value]) { (errorMessage, transformers) in
+//                    print("after create", transformers?[0].name)
+//                    completion(errorMessage)
+//                }
+                completion(nil)
+        }
+    }
+    
     // MARK: - DELETE
     func deleteTransformerBy(id: String, token: String, completion: @escaping ErrorMessageCompletionHandler) {
-        guard let urlRequest = NetworkRequestInfo(endPoint: .deleteTransformer, token: token, httpMethod: .delete, transformerId: id).urlRequest else {
-            completion("Url or AccessToken is not provided")
-            return
+
+        let requestInfo = NetworkRequestInfo(endPoint: .deleteTransformer, token: token, httpMethod: .delete, transformerId: id, transformer: nil)
+        
+        guard let url = requestInfo.url,
+            let headers = requestInfo.headers else {
+                completion("Url or access token is not valid. Please contact our support team")
+                return
         }
         
-        Alamofire.request(urlRequest)
+        Alamofire.request(url, method: .delete, parameters: nil, encoding: URLEncoding.httpBody, headers: headers)
             .validate()
             .responseJSON { (response) in
                 
@@ -79,9 +116,10 @@ final class TransformerService: NSObject {
             group.leave()
         }
         
-        group.notify(queue: DispatchQueue.main, execute: {
+        group.notify(queue: DispatchQueue.main) {
+            print("num # of transformers: \(transformers.count)")
             completion(nil, transformers)
-        })
+        }
     }
 }
 

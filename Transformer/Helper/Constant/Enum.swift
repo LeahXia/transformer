@@ -24,3 +24,10 @@ enum TeamInitial: String {
     case Decepticons = "D"
 }
 
+//enum Spec: String {
+//    case Strength
+//    case 
+//}
+//
+//let progressViews = [strengthProgressView, intelligenceProgressView, speedProgressView, speedProgressView, enduranceProgressView, rankProgressView, courageProgressView, firepowerProgressView, skillProgressView]
+

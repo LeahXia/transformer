@@ -14,52 +14,49 @@ struct NetworkRequestInfo {
     
     // MARK: Variables
     let baseUrl = "https://transformers-api.firebaseapp.com/"
-    var url: URL?
-    var urlRequest: URLRequest?
+    var url: String?
+    var headers: HTTPHeaders?
+    var parameters: Parameters?
     
     // MARK: Initialization
     /// Convenient init for EndPoint .token or .transformers (GET), Return url to feed Alamofire
-    init(endPoint: EndPoint) {
-        self.init(endPoint: endPoint, token: "", httpMethod: .get, transformerId: nil)
+    init(endPoint: EndPoint, token: String = "") {
+        self.init(endPoint: endPoint, token: token, httpMethod: .get, transformerId: nil, transformer: nil)
     }
     
-    init(endPoint: EndPoint, token: String, httpMethod: HTTPMethod, transformerId: String?) {
+    init(endPoint: EndPoint, token: String, httpMethod: HTTPMethod, transformerId: String?, transformer: Transformer?) {
         switch endPoint {
         case .token:
-            self.url = setUrl(endPoint: endPoint)
+            setUrl(endPoint: endPoint, transformerId: nil)
             break
         case .transformers:
-            self.urlRequest = setUrlRequest(endPoint: endPoint, token: token, httpMethod: httpMethod, transformerId: nil)
+            setUrlRequest(endPoint: endPoint, token: token, httpMethod: httpMethod, transformerId: nil, transformer: transformer)
             break
         case .deleteTransformer:
-            self.urlRequest = setUrlRequest(endPoint: endPoint, token: token, httpMethod: httpMethod, transformerId: transformerId)
+            setUrlRequest(endPoint: endPoint, token: token, httpMethod: httpMethod, transformerId: transformerId, transformer: nil)
             break
         }
+        
+    }
+    
+    mutating func setUrlRequest(endPoint: EndPoint, token: String, httpMethod: HTTPMethod, transformerId: String?, transformer: Transformer?) {
+        
+        setUrl(endPoint: endPoint, transformerId: transformerId)
+        
+        // Set header
+        guard endPoint != .token else { return}
+        
+        self.headers = [
+            "Authorization": "Bearer \(token)",
+            "Content-Type": "application/json"
+        ]
+        
+        self.parameters = transformer?.getHttpParameters()
         
     }
     
     // MARK: - Helper
-    func setUrl(endPoint: EndPoint) -> URL? {
-        let url = baseUrl + endPoint.rawValue
-        return URL(string: url)
-    }
-    
-    func setUrlRequest(endPoint: EndPoint, token: String, httpMethod: HTTPMethod, transformerId: String?) -> URLRequest? {
-        
-        let urlStr = baseUrl + endPoint.rawValue + (transformerId ?? "")
-        
-        // Set header
-        guard endPoint != .token,
-            let url = URL(string: urlStr) else {
-                return nil
-        }
-        var urlRequest = URLRequest(url: url)
-        urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        // Set httpMethod
-        urlRequest.httpMethod = httpMethod.rawValue
-        
-        return urlRequest
+    mutating func setUrl(endPoint: EndPoint, transformerId: String?) {
+        self.url = baseUrl + endPoint.rawValue + (transformerId ?? "")
     }
 }

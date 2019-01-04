@@ -1305,9 +1305,11 @@
                         <outlet property="strengthNumberLabel" destination="zis-Gh-faH" id="HAt-15-JuX"/>
                         <outlet property="strengthProgressView" destination="Erl-mM-WNm" id="ayr-7H-sUV"/>
                         <outlet property="transformerNameTextField" destination="Pqq-4u-phR" id="p6d-Iz-AAB"/>
+                        <outlet property="viewModel" destination="Tc8-kN-srn" id="4Q5-uw-joH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdA-G6-T2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Tc8-kN-srn" customClass="CreateTransformerViewModel" customModule="Transformer" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1998" y="133"/>
         </scene>

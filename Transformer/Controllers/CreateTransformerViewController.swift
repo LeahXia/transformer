@@ -24,9 +24,12 @@ class CreateTransformerViewController: UIViewController {
     @IBOutlet weak var decepticonsLabel: UILabel!
     
     @IBOutlet weak var transformerNameTextField: UITextField!
-        
+    
+    @IBOutlet weak var viewModel: CreateTransformerViewModel!
+    
     // MARK: - Spec views
     var steppers = [KWStepper]()
+    var specNumberLabels = [UILabel]()
 
     @IBOutlet weak var strengthNumberLabel: UILabel!
     
@@ -127,7 +130,7 @@ class CreateTransformerViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
+        handleSaveTransformer()
     }
     
     deinit {
@@ -169,10 +172,10 @@ extension CreateTransformerViewController: UITextFieldDelegate {
 extension CreateTransformerViewController {
 
     func setupSteppers() {
-        let decrementButtons = [strengthDecreaseButton, intelligenceDecreaseButton, speedDecreaseButton, speedDecreaseButton, enduranceDecreaseButton, rankDecreaseButton, courageDecreaseButton, firepowerDecreaseButton, skillDecreaseButton]
-        let incrementButtons = [strengthIncreaseButton, intelligenceIncreaseButton, speedIncreaseButton, speedIncreaseButton, enduranceIncreaseButton, rankIncreaseButton, courageIncreaseButton, firepowerIncreaseButton, skillIncreaseButton]
-        let specNumberLabels = [strengthNumberLabel, intelligenceNumberLabel, speedNumberLabel, speedNumberLabel, enduranceNumberLabel, rankNumberLabel, courageNumberLabel, firepowerNumberLabel, skillNumberLabel]
-        let progressViews = [strengthProgressView, intelligenceProgressView, speedProgressView, speedProgressView, enduranceProgressView, rankProgressView, courageProgressView, firepowerProgressView, skillProgressView]
+        let decrementButtons = [strengthDecreaseButton, intelligenceDecreaseButton, speedDecreaseButton, enduranceDecreaseButton, rankDecreaseButton, courageDecreaseButton, firepowerDecreaseButton, skillDecreaseButton]
+        let incrementButtons = [strengthIncreaseButton, intelligenceIncreaseButton, speedIncreaseButton, enduranceIncreaseButton, rankIncreaseButton, courageIncreaseButton, firepowerIncreaseButton, skillIncreaseButton]
+        specNumberLabels = [strengthNumberLabel, intelligenceNumberLabel, speedNumberLabel, enduranceNumberLabel, rankNumberLabel, courageNumberLabel, firepowerNumberLabel, skillNumberLabel]
+        let progressViews = [strengthProgressView, intelligenceProgressView, speedProgressView, enduranceProgressView, rankProgressView, courageProgressView, firepowerProgressView, skillProgressView]
         
         let min = Double(TransformerSpecRange.min.rawValue)
         let max = Double(TransformerSpecRange.max.rawValue)
@@ -192,7 +195,7 @@ extension CreateTransformerViewController {
                 .maximumValue(max)
                 .stepValue(1)
                 .valueChanged { stepper in
-                    specNumberLabels[i]?.text = "\(Int(stepper.value))"
+                    self.specNumberLabels[i].text = "\(Int(stepper.value))"
                     progressViews[i]?.progress = Float(stepper.value / 10)
             }
         }
@@ -234,5 +237,25 @@ extension CreateTransformerViewController {
         }
         transformerNameTextField.layer.borderWidth = 0.5
         transformerNameTextField.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    func handleSaveTransformer() {
+        do {
+            let transformer = try viewModel.createTransformer(name: transformerNameTextField.text, teamInitial: selectedTeamInitial, specLabels: specNumberLabels)
+            
+            viewModel.sendCreateTransformerRequest(transformer: transformer) { [weak self] (errorMessage) in
+                
+                guard errorMessage != nil else {
+                    self?.showAlert(title: "Oops", message: errorMessage!)
+                    return
+                }
+                self?.navigationController?.popViewController(animated: true)
+            }
+            
+        } catch validationError.save (let (title, message)) {
+            showAlert(title: title, message: message)
+        } catch {
+            print("No data or no response")
+        }
     }
 }

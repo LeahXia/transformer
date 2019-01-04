@@ -17,6 +17,8 @@
 		0819319B21D4AC1300710E6C /* Transformers Movie.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0819319921D4AB9700710E6C /* Transformers Movie.ttf */; };
 		0826D44321DEBF6500F72845 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0826D44221DEBF6500F72845 /* Colors.swift */; };
 		0826D44521DED06900F72845 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0826D44421DED06900F72845 /* StringExtension.swift */; };
+		0826D45021DEFD4400F72845 /* CreateTransformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0826D44F21DEFD4300F72845 /* CreateTransformerViewModel.swift */; };
+		082C1FC621DF3E1C005F3710 /* CreateTransformerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FC521DF3E1C005F3710 /* CreateTransformerViewModelTests.swift */; };
 		0833744A21DC87EC00DCB807 /* TransformerListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833744921DC87EC00DCB807 /* TransformerListVCTests.swift */; };
 		084F326321DD53C90084C210 /* TransformerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F326221DD53C90084C210 /* TransformerServiceTests.swift */; };
 		084F326521DD83090084C210 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F326421DD83090084C210 /* ImageService.swift */; };
@@ -82,6 +84,8 @@
 		0819319921D4AB9700710E6C /* Transformers Movie.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Transformers Movie.ttf"; sourceTree = "<group>"; };
 		0826D44221DEBF6500F72845 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0826D44421DED06900F72845 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		0826D44F21DEFD4300F72845 /* CreateTransformerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransformerViewModel.swift; sourceTree = "<group>"; };
+		082C1FC521DF3E1C005F3710 /* CreateTransformerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransformerViewModelTests.swift; sourceTree = "<group>"; };
 		0833744421DC7C5000DCB807 /* Transformer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Transformer.entitlements; sourceTree = "<group>"; };
 		0833744521DC843100DCB807 /* NetworkRequestInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestInfoTests.swift; sourceTree = "<group>"; };
 		0833744921DC87EC00DCB807 /* TransformerListVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerListVCTests.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				08648C3421DC675E0098D1A8 /* TransformerListViewModel.swift */,
+				0826D44F21DEFD4300F72845 /* CreateTransformerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				08F0FF9021DC9C0900D89173 /* TransformerListViewModelTests.swift */,
+				082C1FC521DF3E1C005F3710 /* CreateTransformerViewModelTests.swift */,
 			);
 			path = "ViewModel Tests";
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				0826D44521DED06900F72845 /* StringExtension.swift in Sources */,
 				08648C2921DC410E0098D1A8 /* NetworkRequestInfo.swift in Sources */,
 				0819316221D32C9A00710E6C /* TransformerListViewController.swift in Sources */,
+				0826D45021DEFD4400F72845 /* CreateTransformerViewModel.swift in Sources */,
 				0819316021D32C9A00710E6C /* AppDelegate.swift in Sources */,
 				08F0FFA021DCBDD600D89173 /* TransformerService.swift in Sources */,
 				08648C3521DC675E0098D1A8 /* TransformerListViewModel.swift in Sources */,
@@ -637,6 +644,7 @@
 			files = (
 				08F0FF8B21DC8C0200D89173 /* NetworkRequestInfoTests.swift in Sources */,
 				08F0FF9C21DCAC2D00D89173 /* TransformerModelTests.swift in Sources */,
+				082C1FC621DF3E1C005F3710 /* CreateTransformerViewModelTests.swift in Sources */,
 				0833744A21DC87EC00DCB807 /* TransformerListVCTests.swift in Sources */,
 				08F0FF9921DCABE900D89173 /* TeamModelTests.swift in Sources */,
 				08F0FF9121DC9C0900D89173 /* TransformerListViewModelTests.swift in Sources */,
