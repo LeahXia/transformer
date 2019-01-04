@@ -251,7 +251,8 @@ extension TransformerListViewController {
         case segueIdentifier.listVCToCreateVCSegue.rawValue:
             handleToCreateVCSegue(segue: segue)
             break
-        case segueIdentifier.listVCToCreateVCSegue.rawValue:
+        case segueIdentifier.listVCToFightVCSegue.rawValue:
+            
             break
         default:
             break
@@ -266,6 +267,13 @@ extension TransformerListViewController {
             let createVC = segue.destination as? CreateTransformerViewController
             createVC?.transformer = selectedTransformer
         }
+    }
+    
+    func handleToFightVCSegue(segue: UIStoryboardSegue) {
+    
+        let fightVC = segue.destination as? FightViewController
+        fightVC?.teams = viewModel.teams
+        
     }
     
 }

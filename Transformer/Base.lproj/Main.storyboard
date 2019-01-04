@@ -607,20 +607,253 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Fight View Controller-->
         <scene sceneID="wpF-jC-6dT">
             <objects>
-                <viewController id="M1d-C4-RjJ" sceneMemberID="viewController">
+                <viewController id="M1d-C4-RjJ" customClass="FightViewController" customModule="Transformer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g0r-CM-03T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-Di-z5Q">
+                                <rect key="frame" x="0.0" y="64" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1r-dF-UrX">
+                                        <rect key="frame" x="12" y="12" width="351" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="ZgL-UB-sHc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUTOBOTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XE6-Nr-uqz">
+                                        <rect key="frame" x="12" y="43" width="351" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="fY9-fb-OZu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="38"/>
+                                        <color key="textColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XE6-Nr-uqz" firstAttribute="leading" secondItem="hoT-Di-z5Q" secondAttribute="leading" constant="12" id="4Fj-0w-azE"/>
+                                    <constraint firstAttribute="trailing" secondItem="XE6-Nr-uqz" secondAttribute="trailing" constant="12" id="OZm-Mv-KNZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="z1r-dF-UrX" secondAttribute="trailing" constant="12" id="XJw-M1-SZ9"/>
+                                    <constraint firstItem="z1r-dF-UrX" firstAttribute="leading" secondItem="hoT-Di-z5Q" secondAttribute="leading" constant="12" id="cZq-Cc-1lf"/>
+                                    <constraint firstItem="XE6-Nr-uqz" firstAttribute="top" secondItem="z1r-dF-UrX" secondAttribute="bottom" constant="6" id="kX6-bg-X5V"/>
+                                    <constraint firstItem="z1r-dF-UrX" firstAttribute="top" secondItem="hoT-Di-z5Q" secondAttribute="top" constant="12" id="lgP-fx-PaX"/>
+                                    <constraint firstAttribute="height" constant="80" id="wuU-DE-9gJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNS-2O-T8u">
+                                <rect key="frame" x="0.0" y="144" width="375" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP5-2B-NPA">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="2SN-Vm-eKe"/>
+                                            <constraint firstAttribute="height" constant="40" id="l7f-JY-HBa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2d-TW-D9I">
+                                        <rect key="frame" x="330" y="0.0" width="45" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="NlU-tE-80V"/>
+                                            <constraint firstAttribute="width" constant="45" id="nn8-fB-d35"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="autobots" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-zz-28B">
+                                        <rect key="frame" x="45" y="5" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="m0m-1f-Lut"/>
+                                            <constraint firstAttribute="width" constant="30" id="usI-SY-2di"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="decepticons" translatesAutoresizingMaskIntoConstraints="NO" id="mI5-1G-pGe">
+                                        <rect key="frame" x="300" y="5" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="FMn-NG-r12"/>
+                                            <constraint firstAttribute="width" constant="30" id="vaI-uh-svb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIGHT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIO-TV-z6e">
+                                        <rect key="frame" x="75" y="0.0" width="225" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bUC-u6-NuT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="38"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="mI5-1G-pGe" firstAttribute="top" secondItem="eNS-2O-T8u" secondAttribute="top" constant="5" id="2oH-iw-Aje"/>
+                                    <constraint firstItem="RP5-2B-NPA" firstAttribute="leading" secondItem="eNS-2O-T8u" secondAttribute="leading" id="8k0-jK-l4z"/>
+                                    <constraint firstItem="N4N-zz-28B" firstAttribute="leading" secondItem="RP5-2B-NPA" secondAttribute="trailing" id="AeC-vJ-BHk"/>
+                                    <constraint firstItem="K2d-TW-D9I" firstAttribute="top" secondItem="eNS-2O-T8u" secondAttribute="top" id="EBj-eq-tbC"/>
+                                    <constraint firstItem="mI5-1G-pGe" firstAttribute="leading" secondItem="dIO-TV-z6e" secondAttribute="trailing" id="Scn-tS-KRx"/>
+                                    <constraint firstAttribute="height" constant="40" id="UzU-2T-KR9"/>
+                                    <constraint firstItem="N4N-zz-28B" firstAttribute="top" secondItem="eNS-2O-T8u" secondAttribute="top" constant="5" id="WRz-4s-6Fj"/>
+                                    <constraint firstItem="RP5-2B-NPA" firstAttribute="top" secondItem="eNS-2O-T8u" secondAttribute="top" id="WSW-C8-2nr"/>
+                                    <constraint firstItem="dIO-TV-z6e" firstAttribute="leading" secondItem="N4N-zz-28B" secondAttribute="trailing" id="cuS-ek-7rZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="K2d-TW-D9I" secondAttribute="trailing" id="wJU-Rv-CIS"/>
+                                    <constraint firstItem="K2d-TW-D9I" firstAttribute="leading" secondItem="mI5-1G-pGe" secondAttribute="trailing" id="xt5-Fo-r4d"/>
+                                    <constraint firstItem="dIO-TV-z6e" firstAttribute="top" secondItem="eNS-2O-T8u" secondAttribute="top" id="zND-VY-gO7"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rjt-N8-Q1Q">
+                                <rect key="frame" x="0.0" y="184" width="375" height="424"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k6r-PP-vaX">
+                                    <size key="itemSize" width="375" height="180"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="fightCellId" id="XlC-KG-ysL" customClass="FightCollectionViewCell" customModule="Transformer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="autobots" translatesAutoresizingMaskIntoConstraints="NO" id="RUm-m2-SKJ">
+                                                    <rect key="frame" x="20" y="40" width="60" height="60"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.031372549020000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="RUm-m2-SKJ" secondAttribute="height" multiplier="1:1" id="Lxc-cd-RJe"/>
+                                                        <constraint firstAttribute="width" constant="60" id="oTt-di-7wm"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="decepticons" translatesAutoresizingMaskIntoConstraints="NO" id="Y63-Td-dOQ">
+                                                    <rect key="frame" x="295" y="40" width="60" height="60"/>
+                                                    <color key="backgroundColor" red="0.24313725489999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="XdS-fw-KyW"/>
+                                                        <constraint firstAttribute="width" secondItem="Y63-Td-dOQ" secondAttribute="height" multiplier="1:1" id="shA-Bs-jt1"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frV-a9-oRP">
+                                                    <rect key="frame" x="92" y="40" width="153" height="18"/>
+                                                    <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJU-dj-t75">
+                                                    <rect key="frame" x="130" y="82" width="153" height="18"/>
+                                                    <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="39 VS 28" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-qo-cvV">
+                                                    <rect key="frame" x="32" y="132" width="311" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="fLg-se-hOK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="36"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XhZ-3s-YJb" userLabel="Separator">
+                                                    <rect key="frame" x="0.0" y="179" width="375" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="y7N-rb-qjU"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="XhZ-3s-YJb" secondAttribute="bottom" id="22u-bP-Wox"/>
+                                            <constraint firstItem="QfH-qo-cvV" firstAttribute="top" secondItem="RUm-m2-SKJ" secondAttribute="bottom" constant="32" id="4UT-HY-dK2"/>
+                                            <constraint firstItem="Y63-Td-dOQ" firstAttribute="top" secondItem="RUm-m2-SKJ" secondAttribute="top" id="4eM-yD-Lfi"/>
+                                            <constraint firstItem="frV-a9-oRP" firstAttribute="top" secondItem="RUm-m2-SKJ" secondAttribute="top" id="4qa-hH-Apz"/>
+                                            <constraint firstItem="fJU-dj-t75" firstAttribute="leading" secondItem="RUm-m2-SKJ" secondAttribute="trailing" constant="50" id="6WU-gX-5nc"/>
+                                            <constraint firstItem="XhZ-3s-YJb" firstAttribute="leading" secondItem="XlC-KG-ysL" secondAttribute="leading" id="HxK-cz-yab"/>
+                                            <constraint firstItem="QfH-qo-cvV" firstAttribute="leading" secondItem="XlC-KG-ysL" secondAttribute="leadingMargin" constant="24" id="OBa-N0-HS3"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="QfH-qo-cvV" secondAttribute="trailing" constant="24" id="PeU-XF-wAg"/>
+                                            <constraint firstAttribute="trailing" secondItem="XhZ-3s-YJb" secondAttribute="trailing" id="agb-2C-vFQ"/>
+                                            <constraint firstItem="fJU-dj-t75" firstAttribute="bottom" secondItem="Y63-Td-dOQ" secondAttribute="bottom" id="f6A-fG-Sfv"/>
+                                            <constraint firstItem="Y63-Td-dOQ" firstAttribute="leading" secondItem="frV-a9-oRP" secondAttribute="trailing" constant="50" id="hW6-M5-xNa"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Y63-Td-dOQ" secondAttribute="trailing" constant="12" id="mAZ-5N-VUA"/>
+                                            <constraint firstItem="Y63-Td-dOQ" firstAttribute="leading" secondItem="fJU-dj-t75" secondAttribute="trailing" constant="12" id="nxD-Wb-PFy"/>
+                                            <constraint firstItem="RUm-m2-SKJ" firstAttribute="top" secondItem="XlC-KG-ysL" secondAttribute="topMargin" constant="12" id="u5Q-2c-txp"/>
+                                            <constraint firstItem="RUm-m2-SKJ" firstAttribute="leading" secondItem="XlC-KG-ysL" secondAttribute="leadingMargin" constant="12" id="vcm-3j-yUA"/>
+                                            <constraint firstItem="frV-a9-oRP" firstAttribute="leading" secondItem="RUm-m2-SKJ" secondAttribute="trailing" constant="12" id="zaj-nC-4el"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="autobotsImageView" destination="RUm-m2-SKJ" id="ebR-Ze-x4L"/>
+                                            <outlet property="autobotsName" destination="frV-a9-oRP" id="x5L-cE-EBY"/>
+                                            <outlet property="battleResultLabel" destination="QfH-qo-cvV" id="0Lz-Mg-M3B"/>
+                                            <outlet property="decepticonsImageView" destination="Y63-Td-dOQ" id="mUT-Pq-6f2"/>
+                                            <outlet property="decepticonsName" destination="fJU-dj-t75" id="vKN-lp-Bp7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="M1d-C4-RjJ" id="EZg-tB-AmD"/>
+                                    <outlet property="delegate" destination="M1d-C4-RjJ" id="qAM-20-84e"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdc-0o-07d">
+                                <rect key="frame" x="70" y="616" width="235" height="39"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="j7X-gA-lqP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TransformersMovie" family="Transformers" pointSize="35"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="M1d-C4-RjJ" eventType="touchUpInside" id="N5w-mY-a11"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hoT-Di-z5Q" firstAttribute="leading" secondItem="BDR-jV-jmj" secondAttribute="leading" id="3lB-ea-tpr"/>
+                            <constraint firstItem="eNS-2O-T8u" firstAttribute="trailing" secondItem="BDR-jV-jmj" secondAttribute="trailing" id="8kr-yx-OKy"/>
+                            <constraint firstItem="BDR-jV-jmj" firstAttribute="trailing" secondItem="xdc-0o-07d" secondAttribute="trailing" constant="70" id="9Ew-Hn-9sT"/>
+                            <constraint firstItem="eNS-2O-T8u" firstAttribute="leading" secondItem="BDR-jV-jmj" secondAttribute="leading" id="Agi-WZ-joF"/>
+                            <constraint firstItem="Rjt-N8-Q1Q" firstAttribute="top" secondItem="eNS-2O-T8u" secondAttribute="bottom" id="BSL-8c-lzG"/>
+                            <constraint firstItem="BDR-jV-jmj" firstAttribute="bottom" secondItem="xdc-0o-07d" secondAttribute="bottom" constant="12" id="OP9-fA-PNe"/>
+                            <constraint firstItem="xdc-0o-07d" firstAttribute="leading" secondItem="BDR-jV-jmj" secondAttribute="leading" constant="70" id="Zm9-JA-Dp7"/>
+                            <constraint firstItem="xdc-0o-07d" firstAttribute="top" secondItem="Rjt-N8-Q1Q" secondAttribute="bottom" constant="8" id="bRC-e3-HMf"/>
+                            <constraint firstItem="Rjt-N8-Q1Q" firstAttribute="trailing" secondItem="BDR-jV-jmj" secondAttribute="trailing" id="h65-19-8RF"/>
+                            <constraint firstItem="eNS-2O-T8u" firstAttribute="top" secondItem="hoT-Di-z5Q" secondAttribute="bottom" id="l6L-dm-Hr5"/>
+                            <constraint firstItem="hoT-Di-z5Q" firstAttribute="top" secondItem="BDR-jV-jmj" secondAttribute="top" id="rC9-lZ-VFs"/>
+                            <constraint firstItem="Rjt-N8-Q1Q" firstAttribute="leading" secondItem="BDR-jV-jmj" secondAttribute="leading" id="u8o-eR-xlM"/>
+                            <constraint firstItem="hoT-Di-z5Q" firstAttribute="trailing" secondItem="BDR-jV-jmj" secondAttribute="trailing" id="wvO-dC-5lF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BDR-jV-jmj"/>
                     </view>
+                    <connections>
+                        <outlet property="autobotsBattleNumberLabel" destination="RP5-2B-NPA" id="RhF-4F-IlQ"/>
+                        <outlet property="battleCollectionView" destination="Rjt-N8-Q1Q" id="9eF-jK-90g"/>
+                        <outlet property="battleNumberView" destination="eNS-2O-T8u" id="bi7-zU-KwE"/>
+                        <outlet property="decepticonsBattleNumberLabel" destination="K2d-TW-D9I" id="6Cw-DF-vMv"/>
+                        <outlet property="winningTeamLabel" destination="XE6-Nr-uqz" id="3HK-Qi-A2L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ja-p2-X82" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="925"/>
+            <point key="canvasLocation" x="1076" y="924.28785607196414"/>
         </scene>
         <!--AUTOBOTS-->
         <scene sceneID="e8H-v8-fYG">

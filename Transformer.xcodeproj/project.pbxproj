@@ -19,6 +19,8 @@
 		0826D44521DED06900F72845 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0826D44421DED06900F72845 /* StringExtension.swift */; };
 		0826D45021DEFD4400F72845 /* CreateTransformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0826D44F21DEFD4300F72845 /* CreateTransformerViewModel.swift */; };
 		082C1FC621DF3E1C005F3710 /* CreateTransformerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FC521DF3E1C005F3710 /* CreateTransformerViewModelTests.swift */; };
+		082C1FC821E0100A005F3710 /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FC721E0100A005F3710 /* FightViewController.swift */; };
+		082C1FCA21E01E75005F3710 /* FightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FC921E01E75005F3710 /* FightCollectionViewCell.swift */; };
 		0833744A21DC87EC00DCB807 /* TransformerListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833744921DC87EC00DCB807 /* TransformerListVCTests.swift */; };
 		084F326321DD53C90084C210 /* TransformerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F326221DD53C90084C210 /* TransformerServiceTests.swift */; };
 		084F326521DD83090084C210 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F326421DD83090084C210 /* ImageService.swift */; };
@@ -86,6 +88,8 @@
 		0826D44421DED06900F72845 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0826D44F21DEFD4300F72845 /* CreateTransformerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransformerViewModel.swift; sourceTree = "<group>"; };
 		082C1FC521DF3E1C005F3710 /* CreateTransformerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransformerViewModelTests.swift; sourceTree = "<group>"; };
+		082C1FC721E0100A005F3710 /* FightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
+		082C1FC921E01E75005F3710 /* FightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightCollectionViewCell.swift; sourceTree = "<group>"; };
 		0833744421DC7C5000DCB807 /* Transformer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Transformer.entitlements; sourceTree = "<group>"; };
 		0833744521DC843100DCB807 /* NetworkRequestInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestInfoTests.swift; sourceTree = "<group>"; };
 		0833744921DC87EC00DCB807 /* TransformerListVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerListVCTests.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				0819319621D37B6900710E6C /* TransformerListCollectionViewCell.swift */,
+				082C1FC921E01E75005F3710 /* FightCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			children = (
 				0819316121D32C9A00710E6C /* TransformerListViewController.swift */,
 				080AEB0E21DDFE4E008298EC /* CreateTransformerViewController.swift */,
+				082C1FC721E0100A005F3710 /* FightViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -635,6 +641,8 @@
 				0819319721D37B6900710E6C /* TransformerListCollectionViewCell.swift in Sources */,
 				08648C3821DC69F70098D1A8 /* ViewControllerExtensions.swift in Sources */,
 				08648C2B21DC603D0098D1A8 /* AuthService.swift in Sources */,
+				082C1FCA21E01E75005F3710 /* FightCollectionViewCell.swift in Sources */,
+				082C1FC821E0100A005F3710 /* FightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
