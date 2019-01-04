@@ -27,9 +27,12 @@ class CreateTransformerViewController: UIViewController {
     
     @IBOutlet weak var viewModel: CreateTransformerViewModel!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     // MARK: - Spec views
     var steppers = [KWStepper]()
     var specNumberLabels = [UILabel]()
+    var progressViews = [UIProgressView]()
 
     @IBOutlet weak var strengthNumberLabel: UILabel!
     
@@ -104,15 +107,17 @@ class CreateTransformerViewController: UIViewController {
     
     
     // MARK: - Variables
-    var transformer: Transformer?
     var selectedTeamInitial: TeamInitial?
-    
+
+    var transformer: Transformer?
+ 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFiledDelegate()
         setupSteppers()
         addKeyboardObserver()
+        setTransformerInfoToView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -130,7 +135,18 @@ class CreateTransformerViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        handleSaveTransformer()
+        activityIndicator.startAnimating()
+        // Editing
+        if let transformer = transformer {
+            viewModel.sendEditTransformerRequest(transformer: transformer, name: transformerNameTextField.text, teamInitial: selectedTeamInitial, specLabels: specNumberLabels) { [weak self] (errorMessage)  in
+                self?.showErrorAlertOrDismissVCAfterSaving(errorMessage: errorMessage)
+            }
+        } else {
+            // Creating
+            viewModel.createTransformerAndSendRequest(name: transformerNameTextField.text, teamInitial: selectedTeamInitial, specLabels: specNumberLabels) { [weak self] (errorMessage) in
+                self?.showErrorAlertOrDismissVCAfterSaving(errorMessage: errorMessage)
+            }
+        }
     }
     
     deinit {
@@ -175,7 +191,7 @@ extension CreateTransformerViewController {
         let decrementButtons = [strengthDecreaseButton, intelligenceDecreaseButton, speedDecreaseButton, enduranceDecreaseButton, rankDecreaseButton, courageDecreaseButton, firepowerDecreaseButton, skillDecreaseButton]
         let incrementButtons = [strengthIncreaseButton, intelligenceIncreaseButton, speedIncreaseButton, enduranceIncreaseButton, rankIncreaseButton, courageIncreaseButton, firepowerIncreaseButton, skillIncreaseButton]
         specNumberLabels = [strengthNumberLabel, intelligenceNumberLabel, speedNumberLabel, enduranceNumberLabel, rankNumberLabel, courageNumberLabel, firepowerNumberLabel, skillNumberLabel]
-        let progressViews = [strengthProgressView, intelligenceProgressView, speedProgressView, enduranceProgressView, rankProgressView, courageProgressView, firepowerProgressView, skillProgressView]
+        progressViews = [strengthProgressView, intelligenceProgressView, speedProgressView, enduranceProgressView, rankProgressView, courageProgressView, firepowerProgressView, skillProgressView]
         
         let min = Double(TransformerSpecRange.min.rawValue)
         let max = Double(TransformerSpecRange.max.rawValue)
@@ -194,9 +210,9 @@ extension CreateTransformerViewController {
                 .minimumValue(min)
                 .maximumValue(max)
                 .stepValue(1)
-                .valueChanged { stepper in
-                    self.specNumberLabels[i].text = "\(Int(stepper.value))"
-                    progressViews[i]?.progress = Float(stepper.value / 10)
+                .valueChanged { [weak self] stepper in
+                    self?.specNumberLabels[i].text = "\(Int(stepper.value))"
+                    self?.progressViews[i].progress = Float(stepper.value / 10)
             }
         }
     }
@@ -228,8 +244,6 @@ extension CreateTransformerViewController {
     }
     
     func validateTransformerName(name: String) {
-        print("current: ", name)
-
         guard !name.isAlphanumericOrWhiteSpace() else {
             transformerNameTextField.layer.borderWidth = 0
             transformerNameTextField.layer.borderColor = UIColor.gray.cgColor
@@ -239,23 +253,59 @@ extension CreateTransformerViewController {
         transformerNameTextField.layer.borderColor = UIColor.red.cgColor
     }
     
-    func handleSaveTransformer() {
-        do {
-            let transformer = try viewModel.createTransformer(name: transformerNameTextField.text, teamInitial: selectedTeamInitial, specLabels: specNumberLabels)
-            
-            viewModel.sendCreateTransformerRequest(transformer: transformer) { [weak self] (errorMessage) in
-                
-                guard errorMessage != nil else {
-                    self?.showAlert(title: "Oops", message: errorMessage!)
-                    return
-                }
-                self?.navigationController?.popViewController(animated: true)
-            }
-            
-        } catch validationError.save (let (title, message)) {
-            showAlert(title: title, message: message)
-        } catch {
-            print("No data or no response")
+    func showErrorAlertOrDismissVCAfterSaving(errorMessage: String?) {
+        activityIndicator.stopAnimating()
+        guard errorMessage == nil else {
+            showAlert(title: "Oops", message: errorMessage!)
+            return
         }
+        navigationController?.popViewController(animated: true)
     }
+    
+//    func handleSaveTransformer() {
+//
+//        do {
+//            let transformer = try viewModel.createTransformer(name: transformerNameTextField.text, teamInitial: selectedTeamInitial, specLabels: specNumberLabels)
+//
+//            viewModel.sendCreateTransformerRequest(transformer: transformer) { [weak self] (errorMessage) in
+//
+//                guard errorMessage == nil else {
+//                    self?.showAlert(title: "Oops", message: errorMessage!)
+//                    return
+//                }
+//                self?.navigationController?.popViewController(animated: true)
+//            }
+//
+//        } catch validationError.save (let (title, message)) {
+//            showAlert(title: title, message: message)
+//        } catch {
+//            showAlert(title: "Oops", message: "\(error.localizedDescription)")
+//        }
+//    }
+    
+    // MARK: - Editing
+    func setTransformerInfoToView() {
+        guard let transformer = self.transformer else {return}
+        // Team
+        let initial = transformer.teamInitial == TeamInitial.Autobots.rawValue ? TeamInitial.Autobots : TeamInitial.Decepticons
+        changeSelectedTeam(to: initial)
+        self.selectedTeamInitial = initial
+        // Name
+        self.transformerNameTextField.text = transformer.name
+        // Specs
+        updateSpecViews()
+    }
+    
+    func updateSpecViews() {
+        guard let transformer = self.transformer else {return}
+        let specNumArray = transformer.getSpecNumberArray()
+        for (index, stepper) in steppers.enumerated() {
+            let specInt = specNumArray[index]
+            specNumberLabels[index].text = "\(specInt)"
+            progressViews[index].progress = Float(specInt / 10)
+            stepper.value = Double(specInt)
+        }
+ 
+    }
+    
 }

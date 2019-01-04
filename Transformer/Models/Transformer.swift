@@ -36,8 +36,8 @@ struct Transformer {
         self.init(id: id, name: name, teamInitial: teamInitial, teamIconUrl: teamIconUrl, strength: defaultSpecValue, intelligence: defaultSpecValue, speed: defaultSpecValue, endurance: defaultSpecValue, rank: defaultSpecValue, courage: defaultSpecValue, firepower: defaultSpecValue, skill: defaultSpecValue)
     }
     
-    init(name: String, teamInitial: String, specValues: [Int]) {
-        self.id = ""
+    init(id: String?, name: String, teamInitial: String, specValues: [Int]) {
+        self.id = id ?? ""
         self.name = name
         self.teamInitial = teamInitial
         self.teamIconUrl = ""
@@ -104,15 +104,44 @@ struct Transformer {
 
     }
     
+    mutating func updateWithNew(transformer: Transformer) {
+
+        self.name = transformer.name
+        self.teamInitial = transformer.teamInitial
+        self.teamIconUrl = transformer.teamIconUrl
+        
+        self.strength = transformer.strength
+        self.intelligence = transformer.intelligence
+        self.speed = transformer.speed
+        self.endurance = transformer.endurance
+        self.rank = transformer.rank
+        self.courage = transformer.courage
+        self.firepower = transformer.firepower
+        self.skill = transformer.skill
+    }
+    
     func getHttpParameters() -> JSONDictionary {
         var parameters = [String: Any]()
 
         let mirror = Mirror(reflecting: self)
         for child in mirror.children {
-            guard var key = child.label, key != "teamIconUrl", key != "id" else { continue }
+            guard var key = child.label, key != "teamIconUrl" else { continue }
             if key == "teamInitial" { key = "team" }
             parameters[key] = "\(child.value)"
         }
         return parameters
+    }
+    
+    func getSpecNumberArray() -> [Int] {
+        var specNumArray = [Int]()
+        let mirror = Mirror(reflecting: self)
+        for child in mirror.children {
+            guard let key = child.label, key != "teamIconUrl",
+                key != "id", key != "teamInitial", key != "name",
+                let value = child.value as? Int
+            else { continue }
+            specNumArray.append(value)
+        }
+        return specNumArray
     }
 }

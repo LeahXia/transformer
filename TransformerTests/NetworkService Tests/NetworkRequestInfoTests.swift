@@ -66,7 +66,7 @@ class NetworkRequestInfoTests: XCTestCase {
         XCTAssertNotNil(networkRequestInfo)
         XCTAssertEqual(networkRequestInfo.url, url)
         XCTAssertEqual(networkRequestInfo.headers?.count, 2)
-        XCTAssertEqual(networkRequestInfo.parameters?.count, 10)
+        XCTAssertEqual(networkRequestInfo.parameters?.count, 11)
     }
     
     func testInitNetworkRequestInfo_ForDELETETransformer_SetsDELETEUrlRequest() {

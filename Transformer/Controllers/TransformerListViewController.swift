@@ -33,6 +33,7 @@ final class TransformerListViewController: UIViewController {
     // MARK: - Variables
     let transformerListCellId = "transformerListCellId"
     var selectedTransformer: Transformer?
+    var shouldEdit = false
     
     private var accessToken: String? {
         get { return KeychainWrapper.standard.string(forKey: "accessToken") }
@@ -183,6 +184,7 @@ extension TransformerListViewController: UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let teamIndex = setTeamIndexAccordingTo(collectionView: collectionView)
         self.selectedTransformer = viewModel.memberForItem(at: indexPath, teamIndex: teamIndex)
+        self.shouldEdit = true
         performSegue(withIdentifier: segueIdentifier.listVCToCreateVCSegue.rawValue, sender: self)
     }
     
@@ -242,17 +244,27 @@ extension TransformerListViewController: TransformerListCellDelegate {
 
 }
 
+// MARK: - Segues
 extension TransformerListViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case segueIdentifier.listVCToCreateVCSegue.rawValue:
-//            let createVC = segue.destination as? CreateTransformerViewController
-//            createVC?.transformer = transformer
+            handleToCreateVCSegue(segue: segue)
             break
         case segueIdentifier.listVCToCreateVCSegue.rawValue:
             break
         default:
             break
+        }
+    }
+    
+    // Helper
+    func handleToCreateVCSegue(segue: UIStoryboardSegue) {
+        if selectedTransformer == nil, shouldEdit {
+            showAlert(title: "Oops", message: "No Transformer is selected")
+        } else {
+            let createVC = segue.destination as? CreateTransformerViewController
+            createVC?.transformer = selectedTransformer
         }
     }
     

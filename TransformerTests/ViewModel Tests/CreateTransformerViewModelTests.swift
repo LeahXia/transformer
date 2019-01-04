@@ -31,7 +31,7 @@ class CreateTransformerViewModelTests: XCTestCase {
         let specLabels = [UILabel]()
         // When
         do {
-            _ = try sut.createTransformer(name: nil, teamInitial: .Decepticons, specLabels: specLabels)
+            _ = try sut.createOrEditTransformer(id: nil, name: nil, teamInitial: .Decepticons, specLabels: specLabels)
         } catch {
             // Then
             XCTAssertTrue(error is validationError)
@@ -44,7 +44,7 @@ class CreateTransformerViewModelTests: XCTestCase {
         let specLabels = [UILabel]()
         // When
         do {
-            _ = try sut.createTransformer(name: "Test", teamInitial: nil, specLabels: specLabels)
+            _ = try sut.createOrEditTransformer(id: nil, name: "Test", teamInitial: nil, specLabels: specLabels)
         } catch {
             // Then
             XCTAssertTrue(error is validationError)
@@ -58,7 +58,7 @@ class CreateTransformerViewModelTests: XCTestCase {
 
         // When
         do {
-            _ = try sut.createTransformer(name: "Test", teamInitial: .Decepticons, specLabels: specLabels)
+            _ = try sut.createOrEditTransformer(id: nil, name: "Test", teamInitial: .Decepticons, specLabels: specLabels)
         } catch {
             // Then
             XCTAssertTrue(error is validationError)
@@ -69,12 +69,25 @@ class CreateTransformerViewModelTests: XCTestCase {
         
         // When
         do {
-            _ = try sut.createTransformer(name: "Test", teamInitial: .Decepticons, specLabels: specLabels)
+            _ = try sut.createOrEditTransformer(id: nil, name: "Test", teamInitial: .Decepticons, specLabels: specLabels)
         } catch {
             // Then
             XCTAssertTrue(error is validationError)
         }
         
+    }
+    
+    // MARK: - Update Transformer
+    func testUpdateTransformer_WithoutValidInput_ReturnsError() {
+        // Given
+        let specLabels = setSpecLabels(text: "10")
+        // When
+        do {
+            _ = try sut.createOrEditTransformer(id: nil, name: "BumbleBee", teamInitial: .Decepticons, specLabels: specLabels)
+        } catch {
+            // Then
+            XCTAssertTrue(error is validationError)
+        }
     }
     
     // MARK: - Helper
@@ -88,50 +101,5 @@ class CreateTransformerViewModelTests: XCTestCase {
         
         return specLabels
     }
-//    func testFetchAllTransformers_WithInvalidTokenPassedIn_ReturnsOldToken() {
-//        // Given
-//        let oldToken = "dfjdfjadifje"
-//        let promise = expectation(description: "Token stays the same")
-//        // When
-//        sut.fetchAllTransformers(with: oldToken) { (errorMessage, newToken) in
-//            // Then
-//            XCTAssertNotNil(errorMessage)
-//            XCTAssertEqual(newToken, oldToken)
-//            promise.fulfill()
-//        }
-//        waitForExpectations(timeout: 5, handler: nil)
-//    }
-//
-//    func testFetchAllTransformers_WithValidTokenPassedIn_ReturnsOldToken() {
-//        // Given
-//        let promise = expectation(description: "Token stays the same")
-//        // When
-//        sut.fetchAllTransformers(with: token) { (errorMessage, newToken) in
-//            // Then
-//            XCTAssertNil(errorMessage)
-//            XCTAssertEqual(self.token, newToken)
-//            XCTAssertNotNil(newToken)
-//            promise.fulfill()
-//        }
-//        waitForExpectations(timeout: 5, handler: nil)
-//    }
-//
-//    // MARK: - Fetch Transformers
-//    func testFetchTransformers_WithValidToken_SetsTransformersToTeams() {
-//        let promise = expectation(description: "Tramsformers are set to teams")
-//        sut.fetchTransformers(token: token) { (errorMessage) in
-//            XCTAssertNil(errorMessage)
-//            promise.fulfill()
-//        }
-//        waitForExpectations(timeout: 5, handler: nil)
-//    }
-//
-//    func testFetchTransformers_WithInvalidToken_ReturnsErrorMessage() {
-//        let promise = expectation(description: "Tramsformers are set to teams")
-//        sut.fetchTransformers(token: nil) { (errorMessage) in
-//            XCTAssertNotNil(errorMessage)
-//            promise.fulfill()
-//        }
-//        waitForExpectations(timeout: 5, handler: nil)
-//    }
+
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 enum CornerRadius: CGFloat {
     case button = 15.2
@@ -22,6 +23,13 @@ enum EndPoint: String {
 enum TeamInitial: String {
     case Autobots = "A"
     case Decepticons = "D"
+}
+
+enum HttpMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case delete = "DELETE"
 }
 
 //enum Spec: String {
