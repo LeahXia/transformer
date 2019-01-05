@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.8.0)
+  - KWStepper (2.4.0)
+  - SwiftKeychainWrapper (3.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - KWStepper
+  - SwiftKeychainWrapper
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - KWStepper
+    - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  KWStepper: e4347229115c856ae193afd92f84807a62dfb8a9
+  SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
+
+PODFILE CHECKSUM: 49fd054c5d543d8183e419b9b3a17b3ffc78a1ac
+
+COCOAPODS: 1.5.3
