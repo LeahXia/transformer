@@ -115,10 +115,6 @@ final class TransformerListViewController: UIViewController {
     // MARK: - Actions
     @IBAction func didFightButtonTapped(_ sender: UIButton) {
     }
-   
-    deinit {
-        print("List VC deinit")
-    }
 }
 
 // MARK: - CollectionView Delegate & DataSource
@@ -252,7 +248,7 @@ extension TransformerListViewController {
             handleToCreateVCSegue(segue: segue)
             break
         case segueIdentifier.listVCToFightVCSegue.rawValue:
-            
+            handleToFightVCSegue(segue: segue)
             break
         default:
             break
@@ -263,6 +259,7 @@ extension TransformerListViewController {
     func handleToCreateVCSegue(segue: UIStoryboardSegue) {
         if selectedTransformer == nil, shouldEdit {
             showAlert(title: "Oops", message: "No Transformer is selected")
+            shouldEdit = false
         } else {
             let createVC = segue.destination as? CreateTransformerViewController
             createVC?.transformer = selectedTransformer
@@ -270,10 +267,19 @@ extension TransformerListViewController {
     }
     
     func handleToFightVCSegue(segue: UIStoryboardSegue) {
-    
         let fightVC = segue.destination as? FightViewController
-        fightVC?.teams = viewModel.teams
+        let battles = viewModel.formBattles()
+        fightVC?.viewModel.battles = battles
         
+        guard let token = self.accessToken else {return}
+        viewModel.deleteLosersBy(battles: battles, token: token) { [weak self] errorMessage in
+            guard let errorMessage = errorMessage else {
+                self?.viewModel.emptyTeams()
+                self?.autobotsCollectionView.reloadData()
+                self?.decepticonsCollectionView.reloadData()
+                return
+            }
+            self?.showAlert(title: "Oops!", message: "Cannot delete this Transformer due to \(errorMessage)")
+        }
     }
-    
 }

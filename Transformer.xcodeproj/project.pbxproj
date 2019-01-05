@@ -21,6 +21,9 @@
 		082C1FC621DF3E1C005F3710 /* CreateTransformerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FC521DF3E1C005F3710 /* CreateTransformerViewModelTests.swift */; };
 		082C1FC821E0100A005F3710 /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FC721E0100A005F3710 /* FightViewController.swift */; };
 		082C1FCA21E01E75005F3710 /* FightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FC921E01E75005F3710 /* FightCollectionViewCell.swift */; };
+		082C1FCC21E0228F005F3710 /* FightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FCB21E0228F005F3710 /* FightViewModel.swift */; };
+		082C1FCE21E027B8005F3710 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FCD21E027B8005F3710 /* Battle.swift */; };
+		082C1FD021E05619005F3710 /* BattleModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C1FCF21E05619005F3710 /* BattleModelTests.swift */; };
 		0833744A21DC87EC00DCB807 /* TransformerListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833744921DC87EC00DCB807 /* TransformerListVCTests.swift */; };
 		084F326321DD53C90084C210 /* TransformerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F326221DD53C90084C210 /* TransformerServiceTests.swift */; };
 		084F326521DD83090084C210 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F326421DD83090084C210 /* ImageService.swift */; };
@@ -90,6 +93,9 @@
 		082C1FC521DF3E1C005F3710 /* CreateTransformerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransformerViewModelTests.swift; sourceTree = "<group>"; };
 		082C1FC721E0100A005F3710 /* FightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
 		082C1FC921E01E75005F3710 /* FightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightCollectionViewCell.swift; sourceTree = "<group>"; };
+		082C1FCB21E0228F005F3710 /* FightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewModel.swift; sourceTree = "<group>"; };
+		082C1FCD21E027B8005F3710 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
+		082C1FCF21E05619005F3710 /* BattleModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleModelTests.swift; sourceTree = "<group>"; };
 		0833744421DC7C5000DCB807 /* Transformer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Transformer.entitlements; sourceTree = "<group>"; };
 		0833744521DC843100DCB807 /* NetworkRequestInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestInfoTests.swift; sourceTree = "<group>"; };
 		0833744921DC87EC00DCB807 /* TransformerListVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerListVCTests.swift; sourceTree = "<group>"; };
@@ -251,6 +257,7 @@
 			children = (
 				08648C3421DC675E0098D1A8 /* TransformerListViewModel.swift */,
 				0826D44F21DEFD4300F72845 /* CreateTransformerViewModel.swift */,
+				082C1FCB21E0228F005F3710 /* FightViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -326,6 +333,7 @@
 			children = (
 				08F0FF9421DCAB8900D89173 /* Team.swift */,
 				08F0FF9D21DCAC3B00D89173 /* Transformer.swift */,
+				082C1FCD21E027B8005F3710 /* Battle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -335,6 +343,7 @@
 			children = (
 				08F0FF9721DCABE900D89173 /* TeamModelTests.swift */,
 				08F0FF9B21DCAC2D00D89173 /* TransformerModelTests.swift */,
+				082C1FCF21E05619005F3710 /* BattleModelTests.swift */,
 			);
 			path = "Model Tests";
 			sourceTree = "<group>";
@@ -629,8 +638,10 @@
 				08F0FF9E21DCAC3B00D89173 /* Transformer.swift in Sources */,
 				08F0FF9521DCAB8900D89173 /* Team.swift in Sources */,
 				0826D44521DED06900F72845 /* StringExtension.swift in Sources */,
+				082C1FCC21E0228F005F3710 /* FightViewModel.swift in Sources */,
 				08648C2921DC410E0098D1A8 /* NetworkRequestInfo.swift in Sources */,
 				0819316221D32C9A00710E6C /* TransformerListViewController.swift in Sources */,
+				082C1FCE21E027B8005F3710 /* Battle.swift in Sources */,
 				0826D45021DEFD4400F72845 /* CreateTransformerViewModel.swift in Sources */,
 				0819316021D32C9A00710E6C /* AppDelegate.swift in Sources */,
 				08F0FFA021DCBDD600D89173 /* TransformerService.swift in Sources */,
@@ -652,6 +663,7 @@
 			files = (
 				08F0FF8B21DC8C0200D89173 /* NetworkRequestInfoTests.swift in Sources */,
 				08F0FF9C21DCAC2D00D89173 /* TransformerModelTests.swift in Sources */,
+				082C1FD021E05619005F3710 /* BattleModelTests.swift in Sources */,
 				082C1FC621DF3E1C005F3710 /* CreateTransformerViewModelTests.swift in Sources */,
 				0833744A21DC87EC00DCB807 /* TransformerListVCTests.swift in Sources */,
 				08F0FF9921DCABE900D89173 /* TeamModelTests.swift in Sources */,

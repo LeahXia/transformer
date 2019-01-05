@@ -848,10 +848,12 @@
                         <outlet property="battleCollectionView" destination="Rjt-N8-Q1Q" id="9eF-jK-90g"/>
                         <outlet property="battleNumberView" destination="eNS-2O-T8u" id="bi7-zU-KwE"/>
                         <outlet property="decepticonsBattleNumberLabel" destination="K2d-TW-D9I" id="6Cw-DF-vMv"/>
+                        <outlet property="viewModel" destination="cMy-X0-Mm4" id="ktJ-PB-LLO"/>
                         <outlet property="winningTeamLabel" destination="XE6-Nr-uqz" id="3HK-Qi-A2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ja-p2-X82" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="cMy-X0-Mm4" customClass="FightViewModel" customModule="Transformer" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1076" y="924.28785607196414"/>
         </scene>
