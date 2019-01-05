@@ -25,5 +25,25 @@ class TransformerUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testSpecStepper() {
+        // Given
+        let app = XCUIApplication()
+        app.navigationBars["Transformer"].buttons["Add"].tap()
+        
+        let scrollViewsQuery = app.scrollViews
+        let element = scrollViewsQuery.otherElements.containing(.staticText, identifier:"Name").children(matching: .other).element(boundBy: 2).children(matching: .other).element(boundBy: 0)
+        let plusbuttonButton = element.buttons["plusButton"]
+        plusbuttonButton.tap()
+        plusbuttonButton.tap()
+        
+        // Then
+        let elementsQuery = scrollViewsQuery.otherElements
+        let specNumberLabel = elementsQuery.staticTexts["3"]
+        XCTAssertNotNil(specNumberLabel)
+        element.buttons["minusButton"].tap()
+        let specNumberLabelDecreased = elementsQuery.staticTexts["2"]
+        XCTAssertNotNil(specNumberLabelDecreased)
+    }
 
 }
