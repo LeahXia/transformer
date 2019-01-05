@@ -110,6 +110,7 @@ class CreateTransformerViewController: UIViewController {
     var selectedTeamInitial: TeamInitial?
 
     var transformer: Transformer?
+    
  
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -123,6 +124,7 @@ class CreateTransformerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // MARK: - Actions
@@ -174,11 +176,17 @@ extension CreateTransformerViewController: UITextFieldDelegate {
     // MARK: - Handle Keyboard
     func addKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
         let textFieldTop = transformerNameTextField.frame.origin.y
         scrollView.contentOffset = CGPoint(x: 0, y: textFieldTop - 50)
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
 }
