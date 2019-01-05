@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum TransformerSpecRange: Int {
-    case min = 1
-    case max = 10
-}
-
 /// A model holds Transformer info
 struct Transformer {
     
@@ -30,6 +25,11 @@ struct Transformer {
     var firepower: Int
     var skill: Int
     
+    var overallRating: Int = 0
+    
+    private static let powerfullNames = ["Optimus Prime".lowercased(), "Predaking".lowercased()]
+    
+    // MARK: - Initialization
     init(id: String, name: String, teamInitial: String, teamIconUrl: String) {
         let defaultSpecValue = TransformerSpecRange.min.rawValue
 
@@ -50,7 +50,7 @@ struct Transformer {
         self.courage = specValues[5]
         self.firepower = specValues[6]
         self.skill = specValues[7]
-        
+        self.overallRating = calculateOverallRating()
     }
     
     init(id: String = "", name: String, teamInitial: String, teamIconUrl: String = "", strength: Int, intelligence: Int, speed: Int, endurance: Int, rank: Int, courage: Int, firepower: Int, skill: Int) {
@@ -67,6 +67,7 @@ struct Transformer {
         self.courage = courage
         self.firepower = firepower
         self.skill = skill
+        self.overallRating = calculateOverallRating()
         
     }
     
@@ -101,9 +102,11 @@ struct Transformer {
         self.courage = Int(courage) ?? defaultSpecValue
         self.firepower = Int(firepower) ?? defaultSpecValue
         self.skill = Int(skill) ?? defaultSpecValue
+        self.overallRating = calculateOverallRating()
 
     }
     
+    // MARK: - Updating
     mutating func updateWithNew(transformer: Transformer) {
 
         self.name = transformer.name
@@ -118,8 +121,15 @@ struct Transformer {
         self.courage = transformer.courage
         self.firepower = transformer.firepower
         self.skill = transformer.skill
+        self.overallRating = calculateOverallRating()
     }
     
+    // Calculate overallRating
+    func calculateOverallRating() -> Int {
+        return strength + intelligence + speed + endurance + firepower
+    }
+    
+    // Set Different format
     func getHttpParameters() -> JSONDictionary {
         var parameters = [String: Any]()
 
@@ -144,4 +154,30 @@ struct Transformer {
         }
         return specNumArray
     }
+    
+    // MARK: - Fight specs
+    func isMorePowerful() -> Bool {
+        
+        if teamInitial == "A", self.name.lowercased() == Transformer.powerfullNames[0] {
+            return true
+        } else if teamInitial == "D", self.name.lowercased() == Transformer.powerfullNames[1] {
+            return true
+        }
+        
+        return false
+        
+    }
+    
+    func isMoreSkillful(than opponent: Transformer) -> Bool {
+        return self.skill >= (opponent.skill + 3)
+    }
+    
+    func didOpponentRanAway(opponent: Transformer) -> Bool {
+        return self.courage >= (opponent.courage + 4) && self.strength >= (opponent.strength + 3)
+    }
+    
+    func hasHigherOverallRating(than opponent: Transformer) -> Bool {
+        return self.overallRating > opponent.overallRating
+    }
+        
 }

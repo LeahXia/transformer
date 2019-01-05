@@ -108,6 +108,61 @@ final class TransformerListViewModel: NSObject {
         }
     }
     
+    func deleteLosersBy(battles: [Battle], token: String, completion: @escaping ErrorMessageCompletionHandler) {
+        // Delete from server
+        let battleIds = battles.flatMap { (battle) -> [String] in
+            return battle.loserIds
+        }
+        
+        var lastErrorMessage: String?
+        let group = DispatchGroup()
+        battleIds.forEach({
+            group.enter()
+            transformerService.deleteTransformerBy(id: $0, token: token) { (errorMessage) in
+                lastErrorMessage = errorMessage
+                group.leave()
+            }
+        })
+        
+        group.notify(queue: DispatchQueue.main) {
+            completion(lastErrorMessage)
+        }
+        
+    }
+
+    // MARK: - Form Battles
+    func formBattles() -> [Battle] {
+        sortTeams()
+        
+        var battles = [Battle]()
+        let battleCount = battleCounts()
+        
+        (0..<battleCount).forEach({
+            let battle = Battle(teams: teams, currentIndex: $0)
+            battle.getBattleResult()
+            battles.append(battle)
+        })
+        return battles
+    }
+    
+    func sortTeams() {
+        teams[0].sort()
+        teams[1].sort()
+    }
+    
+    func battleCounts() -> Int {
+        
+        let autobotsCount = teams[0].numberOfMembers()
+        let decepticonsCount = teams[1].numberOfMembers()
+        
+        return autobotsCount > decepticonsCount ? autobotsCount : decepticonsCount
+    }
+    
+    func emptyTeams() {
+        teams[0].removeAllMember()
+        teams[1].removeAllMember()
+    }
+    
 }
 
 

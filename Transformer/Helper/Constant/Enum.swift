@@ -25,17 +25,17 @@ enum TeamInitial: String {
     case Decepticons = "D"
 }
 
-enum HttpMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case put = "PUT"
-    case delete = "DELETE"
+enum TransformerSpecRange: Int {
+    case min = 1
+    case max = 10
 }
 
-//enum Spec: String {
-//    case Strength
-//    case 
-//}
-//
-//let progressViews = [strengthProgressView, intelligenceProgressView, speedProgressView, speedProgressView, enduranceProgressView, rankProgressView, courageProgressView, firepowerProgressView, skillProgressView]
+enum BattleResult {
+    case higherOverall(loser: TeamInitial, autoRating: Int, deceRating: Int)
+    case moreSkillful(loser: TeamInitial)
+    case morePowerful(loser: TeamInitial)
+    case runAway(loser: TeamInitial)
+    case tie
+    case noBattle
+}
 

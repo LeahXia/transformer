@@ -39,6 +39,25 @@ final class Team {
         return members
     }
     
+    func getMember(for index: Int) -> Transformer? {
+        guard members.count > index else {
+            return nil
+        }
+        return members[index]
+    }
+    
+    func removeAllMember() {
+        self.members.removeAll()
+    }
+    
+    func sort() {
+        members = members.sorted(by: { $0.rank > $1.rank })
+    }
+    
+    func numberOfMembers() -> Int {
+        return members.count
+    }
+    
     func addMember(transformer: Transformer) {
         guard members.count < 3 else { return }
         let indexOfExsitedMember = members.firstIndex(where: { $0.id == transformer.id })

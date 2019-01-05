@@ -183,7 +183,6 @@ extension CreateTransformerViewController: UITextFieldDelegate {
     
 }
 
-
 // MARK: - Helper
 extension CreateTransformerViewController {
 
@@ -261,27 +260,6 @@ extension CreateTransformerViewController {
         }
         navigationController?.popViewController(animated: true)
     }
-    
-//    func handleSaveTransformer() {
-//
-//        do {
-//            let transformer = try viewModel.createTransformer(name: transformerNameTextField.text, teamInitial: selectedTeamInitial, specLabels: specNumberLabels)
-//
-//            viewModel.sendCreateTransformerRequest(transformer: transformer) { [weak self] (errorMessage) in
-//
-//                guard errorMessage == nil else {
-//                    self?.showAlert(title: "Oops", message: errorMessage!)
-//                    return
-//                }
-//                self?.navigationController?.popViewController(animated: true)
-//            }
-//
-//        } catch validationError.save (let (title, message)) {
-//            showAlert(title: title, message: message)
-//        } catch {
-//            showAlert(title: "Oops", message: "\(error.localizedDescription)")
-//        }
-//    }
     
     // MARK: - Editing
     func setTransformerInfoToView() {
